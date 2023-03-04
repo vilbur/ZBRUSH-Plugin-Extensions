@@ -1,0 +1,25 @@
+﻿
+
+[ISubPalette, "~Extensions:Layers"]
+
+
+
+[IButton, "~Extensions:Layers:Name", "Rename current sculpt layer",
+	[IPress, "Tool:Layers:Rename"]
+
+,,	48,,,48]
+
+
+/** Etend controls of  MARCUS CIVIS ZSCRIPT FOR LAYERS
+  *	
+  *	https://www.zbrushcentral.com/t/zscript-for-layers/205892
+  */
+[IButton, "~Extensions:Layers:New", "Create new layer",
+	[IPress, "Zplugin:Layer Tools:New"]
+,,	48,,,48]
+
+
+[IButton, "~Extensions:Layers:Rec", "Record current layer",
+	[IPress, "Zplugin:Layer Tools:Rec"]
+,,	48,,,48]
+

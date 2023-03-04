@@ -1,0 +1,7 @@
+﻿[IPalette, "~Extensions"]
+
+
+<zscriptinsert, "ExtensionsData/Restart-Zbrush.txt">
+<zscriptinsert, "ExtensionsData/TrayToggle.txt">
+<zscriptinsert, "ExtensionsData/Layers.txt">
+<zscriptinsert, "ExtensionsData/Scripts.txt">

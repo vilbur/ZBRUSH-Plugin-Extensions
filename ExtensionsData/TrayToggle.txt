@@ -1,0 +1,115 @@
+﻿
+[ISubPalette, "~Extensions:Trays"]
+
+
+/** 
+  */
+[RoutineDef,LeftTrayHide
+,
+	[Loop,5,
+		[If,[IHPos,1000,1]>50,
+			[IClick,1000]
+		,
+			[LoopExit]
+		]
+	]
+]
+
+/** 
+  */
+[RoutineDef,LeftTrayShow
+,
+	[Loop,5,
+		[If,[IHPos,1000,1]<50,
+			[IClick,1000]
+		,
+			[LoopExit]
+		]
+	]
+]
+
+/** 
+  */
+[RoutineDef,RightTrayHide
+,
+	[If,[IHPos,1001]+[IWidth,1001]<[IWidth,Title],
+		//[Note, "Open" ]
+		[Loop,5,
+			[If,[IHPos,1001]+[IWidth,1001]<[IWidth,Title],
+				[IClick,1001]
+			,
+				[LoopExit]
+			]
+		]
+	]
+]
+
+/** 
+  */
+[RoutineDef,RightTrayShow
+,
+	[If,[IHPos,1001]+[IWidth,1001]>=[IWidth,Title],
+		[Loop,5,
+			[If,[IHPos,1001]+[IWidth,1001]>=[IWidth,Title],
+				//[IClick,1001]
+				[IClick,1001]
+			,
+				[LoopExit]
+			]
+		]
+	]
+]
+
+/** Hide trays has priprity
+  * If any tray is open, then hide first
+  */
+[RoutineDef,TraysToggle
+,
+	[VarSet, is_open_left, 	[IHPos,1000,1]>50 ] 
+	[VarSet, is_open_right, [IHPos,1001]+[IWidth,1001]<[IWidth,Title]]
+	
+	[If, [Var, is_open_left] ||  [Var, is_open_right] 
+	, // HIDE TRAYS
+		[If, [Var, is_open_left],
+			[RoutineCall, LeftTrayHide]]
+	
+		[If, [Var, is_open_right],
+			[RoutineCall, RightTrayHide]]
+		
+	, // SHOW TRAYS
+	
+		[If, [Var, is_open_left] == 0,
+			[RoutineCall, LeftTrayShow]]
+	
+		[If, [Var, is_open_right] == 0,
+			[RoutineCall, RightTrayShow]]
+	
+	]
+]
+
+
+
+[IButton, "~Extensions:Trays:Left Tray Show", "LeftTrayShow",
+	[RoutineCall, LeftTrayShow]
+]
+  
+  
+[IButton, "~Extensions:Trays:Left Tray Hide", "LeftTrayHide",
+	[RoutineCall, LeftTrayHide]
+,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
+    
+	
+
+[IButton, "~Extensions:Trays:Right Tray Show", "RightTrayShow",
+	[RoutineCall, RightTrayShow]
+,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
+  
+  
+[IButton, "~Extensions:Trays:Right Tray Hide", "RightTrayHide",
+	[RoutineCall, RightTrayHide]
+,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
+    
+[IButton, "~Extensions:Trays:Trays Toggle", "Trays Toggle",
+	[RoutineCall, TraysToggle]
+,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
+    

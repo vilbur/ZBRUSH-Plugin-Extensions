@@ -1,0 +1,13 @@
+﻿
+[ISubPalette, "~Extensions:Restart Zbrush"]
+
+
+[IButton, "~Extensions:Restart Zbrush:Restart Zbrush", "Kill and Run Zbrush",
+	
+	[VarSet, file_path, [FileNameResolvePath, "UI-ExtendsData\Restart-Zbrush.exe"]]
+
+	[FileExecute, "UI-ExtendsData\ZFileUtils64.dll", "LaunchAppWithFile",  #file_path]
+	
+	[IPress,Close]
+
+,/*Disabled*/,96,/*Hotkey*/,/*Icon*/,64]
