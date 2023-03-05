@@ -1,0 +1,18 @@
+[ISubPalette, "~Extended:Script"]
+
+
+[IButton, "~Extended:Script:  SHOW SCRIPT", "Show script pane",
+	[IPress, Zscript:Hide zscript]
+, , 128, , , 96 ]
+
+[IButton, "~Extended:Script:RECORDED-SCRIPT", "Load ZScripts\RECORDED-SCRIPT.txt",
+	[FileNameSetNext, "ZBRUSH_ZScripts\RECORDED-SCRIPT.txt"]
+	[IPress, ZScript:Load]
+, , 128, , , 96 ]
+
+[IButton, "~Extended:Script:          TEST", "Load ZScripts\TEST.txt",
+	[FileNameSetNext, "ZBRUSH_ZScripts\TEST.txt"]
+	[IPress, ZScript:Load]
+	[IPress, Zscript:Hide zscript]
+
+, , 128, , , 96 ]

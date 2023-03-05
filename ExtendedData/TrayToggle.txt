@@ -1,5 +1,4 @@
-﻿
-[ISubPalette, "~Extensions:Trays"]
+﻿[ISubPalette, "~Extended:Trays"]
 
 
 /** 
@@ -89,27 +88,27 @@
 
 
 
-[IButton, "~Extensions:Trays:Left Tray Show", "LeftTrayShow",
+[IButton, "~Extended:Trays:Left Tray Show", "LeftTrayShow",
 	[RoutineCall, LeftTrayShow]
 ]
   
   
-[IButton, "~Extensions:Trays:Left Tray Hide", "LeftTrayHide",
+[IButton, "~Extended:Trays:Left Tray Hide", "LeftTrayHide",
 	[RoutineCall, LeftTrayHide]
 ,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
     
 	
 
-[IButton, "~Extensions:Trays:Right Tray Show", "RightTrayShow",
+[IButton, "~Extended:Trays:Right Tray Show", "RightTrayShow",
 	[RoutineCall, RightTrayShow]
 ,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
   
   
-[IButton, "~Extensions:Trays:Right Tray Hide", "RightTrayHide",
+[IButton, "~Extended:Trays:Right Tray Hide", "RightTrayHide",
 	[RoutineCall, RightTrayHide]
 ,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
     
-[IButton, "~Extensions:Trays:Trays Toggle", "Trays Toggle",
+[IButton, "~Extended:Trays:Trays Toggle", "Trays Toggle",
 	[RoutineCall, TraysToggle]
 ,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
     

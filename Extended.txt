@@ -1,0 +1,6 @@
+﻿[IPalette, "~Extended"]
+
+
+<zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
+<zscriptinsert, "ExtendedData/Layers.txt">	// "./ExtendedData/Layers.txt"
+<zscriptinsert, "ExtendedData/Scripts.txt">	// "./ExtendedData/Scripts.txt"

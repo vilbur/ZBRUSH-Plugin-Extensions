@@ -1,10 +1,7 @@
-﻿
-
-[ISubPalette, "~Extensions:Layers"]
+﻿[ISubPalette, "~Extended:Layers"]
 
 
-
-[IButton, "~Extensions:Layers:Name", "Rename current sculpt layer",
+[IButton, "~Extended:Layers:Name", "Rename current sculpt layer",
 	[IPress, "Tool:Layers:Rename"]
 
 ,,	48,,,48]
@@ -14,12 +11,12 @@
   *	
   *	https://www.zbrushcentral.com/t/zscript-for-layers/205892
   */
-[IButton, "~Extensions:Layers:New", "Create new layer",
+[IButton, "~Extended:Layers:New", "Create new layer",
 	[IPress, "Zplugin:Layer Tools:New"]
 ,,	48,,,48]
 
 
-[IButton, "~Extensions:Layers:Rec", "Record current layer",
+[IButton, "~Extended:Layers:Rec", "Record current layer",
 	[IPress, "Zplugin:Layer Tools:Rec"]
 ,,	48,,,48]
 
