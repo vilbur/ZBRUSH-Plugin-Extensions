@@ -1,0 +1,12 @@
+[ISubPalette, "~Extended:Custom-UI"]
+
+
+[IButton, "~Extended:Custom-UI:Save UI to file", "Save and store custom ui to custom-UI.cfg"
+,
+	[FileNameSetNext, [FileNameResolvePath, "ZPUBLIC_ZStartup\custom-UI.cfg"]  ]
+
+	[IPress, Preferences:Config:Save Ui]
+
+	[IPress,Preferences:Config:Store Config]
+
+, , 96, , , 48 ]

@@ -6,9 +6,12 @@
 
 ,,	48,,,48]
 
+[IButton, "~Extended:Layers:Delete", "Selete current sculpt layer",
+	[IPress, "Tool:Layers:Delete"]
+,,	48,,,48]
 
 /** Etend controls of  MARCUS CIVIS ZSCRIPT FOR LAYERS
-  *	
+  *
   *	https://www.zbrushcentral.com/t/zscript-for-layers/205892
   */
 [IButton, "~Extended:Layers:New", "Create new layer",
@@ -19,4 +22,3 @@
 [IButton, "~Extended:Layers:Rec", "Record current layer",
 	[IPress, "Zplugin:Layer Tools:Rec"]
 ,,	48,,,48]
-
