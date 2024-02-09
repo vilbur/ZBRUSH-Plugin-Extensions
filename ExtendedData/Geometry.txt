@@ -1,0 +1,23 @@
+﻿[ISubPalette, "~Extended:Geomtery"]
+
+[IButton, "~Extended:Geomtery:ExtractMask","Copy Masked Geomrtry to new subtool"
+,
+
+
+	[IPress,Tool:Visibility:HidePt]
+	[IPress,Tool:Masking:Clear]
+	[IPress,Tool:SubTool:Duplicate]
+	[IPress,Tool:Geometry:Del Lower]
+	[IPress,Tool:Geometry:Del Hidden]
+	[IPress,Tool:SubTool:SelectDown]
+	[IPress,Tool:Visibility:ShowPt]
+	[IPress,Tool:SubTool:SelectUp]
+
+	/* UNHIDE SOURCE SUBTOOTL */
+	[IPress,Tool:SubTool:SelectUp]
+	[IPress,Tool:Visibility:ShowPt]
+
+	/* SELECT NEW SUBTOOTL */
+	[IPress,Tool:SubTool:SelectDown]
+
+]/*End of ZScript*/

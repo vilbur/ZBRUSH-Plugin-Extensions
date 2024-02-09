@@ -1,12 +1,25 @@
 [ISubPalette, "~Extended:Custom-UI"]
 
 
-[IButton, "~Extended:Custom-UI:Save UI to file", "Save and store custom ui to custom-UI.cfg"
+[IButton, "~Extended:Custom-UI:Save UI to file", "Save and store custom ui to vilbur-custom-UI.cfg"
 ,
-	[FileNameSetNext, [FileNameResolvePath, "ZPUBLIC_ZStartup\custom-UI.cfg"]  ]
+	[FileNameSetNext, [FileNameResolvePath, "ZPUBLIC_ZStartup\vilbur-custom-UI.cfg"]  ]
 
 	[IPress, Preferences:Config:Save Ui]
 
 	[IPress,Preferences:Config:Store Config]
+
+	[IUnPress,Preferences:Config:Enable Customize]
+
+, , 96, , , 48 ]
+
+
+[IButton, "~Extended:Custom-UI:Save Hotkeys", "Save and store custom hotkeys to vilbur-custom-UI.cfg"
+,
+	[FileNameSetNext, [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"]  ]
+
+	[IPress,Preferences:Hotkeys:Save] // store keys
+
+	[Note, "HOTKEYS SAVED TO FILE",, 0.5]
 
 , , 96, , , 48 ]

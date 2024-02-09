@@ -1,0 +1,8 @@
+[ISubPalette, "~Extended:Document"]
+
+
+[IButton, "~Extended:Document:New Document","Create new document with full width"
+,
+	[RoutineCall, LeftTrayHide]
+
+]

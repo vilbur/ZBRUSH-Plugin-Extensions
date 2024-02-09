@@ -1,8 +1,10 @@
 ﻿[IPalette, "~Extended"]
 
 
+<zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"
 <zscriptinsert, "ExtendedData/Custom-UI.txt">	// "./ExtendedData/Custom-UI.txt"
-<zscriptinsert, "ExtendedData/UI-Labels.txt">	// "./ExtendedData/UI-Labels.txt"
-<zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
+<zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
 <zscriptinsert, "ExtendedData/Layers.txt">	// "./ExtendedData/Layers.txt"
 <zscriptinsert, "ExtendedData/Scripts.txt">	// "./ExtendedData/Scripts.txt"
+<zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
+<zscriptinsert, "ExtendedData/UI-Labels.txt">	// "./ExtendedData/UI-Labels.txt"
