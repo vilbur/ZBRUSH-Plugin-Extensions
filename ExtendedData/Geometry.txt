@@ -1,9 +1,8 @@
 ﻿[ISubPalette, "~Extended:Geomtery"]
 
+
 [IButton, "~Extended:Geomtery:ExtractMask","Copy Masked Geomrtry to new subtool"
 ,
-
-
 	[IPress,Tool:Visibility:HidePt]
 	[IPress,Tool:Masking:Clear]
 	[IPress,Tool:SubTool:Duplicate]
@@ -21,3 +20,41 @@
 	[IPress,Tool:SubTool:SelectDown]
 
 ]/*End of ZScript*/
+
+
+[IButton, "~Extended:Geomtery:Subdiv MinMax","Toggle subdivision level of all subtools between Min\Max level"
+,
+	[VarSet, $current_subdiv, [IGet, Tool:Geometry:SDiv ]]
+
+
+	[If, [Var, $current_subdiv] == 1
+	, // THEN
+		[IPress,Tool:SubTool:All High]
+
+	, // ELSE
+
+		[IPress,Tool:SubTool:All Low]
+	]
+
+]/*End of ZScript*/
+
+[IButton, "~Extended:Geomtery:Shell 0.02", "Automate shell extraction.\n\nSet SubTool:Thick:0.2\nSubTool:Extract\n\n:SubTool:Accept"
+,
+
+	[VarSet, $source_tool, [IGetTitle,Tool:ItemInfo]]
+
+	[ISet,Tool:SubTool:Thick,0.02]
+
+	//[IPress,Tool:SubTool:TBorder]
+
+	[IPress,Tool:SubTool:Extract]
+
+	[IPress,Tool:SubTool:Accept]
+
+
+	[Note, [StrMerge, "TOOL: ", $source_tool, "\n\nEXTRACTED: ",  [IGetTitle,Tool:ItemInfo], "\n\nTHICKNESS: 0.02" ]  ]
+
+
+
+
+,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,32]

@@ -1,10 +1,33 @@
-﻿[IPalette, "~Extended"]
+﻿/**
+  *
+  */
+[VarSet, $PLUGIN_NAME, 	"Extended"]
+//[VarSet, $PLUGIN_SUBMENU, 	"Run-Plugin"]
+
+[VarSet, $PLUGIN_NENU,	[StrMerge, "~", $PLUGIN_NAME ]]
+
+[VarSet, $PLUGIN_DATA_PATH,	[FileNameResolvePath, [StrMerge, $PLUGIN_NAME, "Data" ]]]
+//[VarSet, $PLUGIN_DATA_PATH,	[FileNameResolvePath, [StrMerge,  $PLUGIN_NAME, "/", $PLUGIN_NAME, "Data" ]]]N
+
+
+//[VarSet, $CONTROLS_PATH,	"" ]	// DEV controls in script pane
+[VarSet, $CONTROLS_PATH,	[StrMerge, $PLUGIN_NENU, ":"]]	// MENU PATH: Menu > Control
+
+[VarSet, $ZFILE_UTILS_DLL, [StrMerge, $PLUGIN_DATA_PATH, "\\ZFileUtils64.dll"] ]
+
+
+[IPalette, $PLUGIN_NENU ]
+
+
 
 
 <zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"
 <zscriptinsert, "ExtendedData/Custom-UI.txt">	// "./ExtendedData/Custom-UI.txt"
 <zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
+<zscriptinsert, "ExtendedData/DynaMesh.txt">	// "./ExtendedData/DynaMesh.txt"
+<zscriptinsert, "ExtendedData/DecimationMaster.txt">	// "./ExtendedData/DecimationMaster.txt"
 <zscriptinsert, "ExtendedData/Layers.txt">	// "./ExtendedData/Layers.txt"
 <zscriptinsert, "ExtendedData/Scripts.txt">	// "./ExtendedData/Scripts.txt"
 <zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
+<zscriptinsert, "ExtendedData/Shortcuts-To-UI.txt">	// "./ExtendedData/Shortcuts-To-UI.txt"
 <zscriptinsert, "ExtendedData/UI-Labels.txt">	// "./ExtendedData/UI-Labels.txt"

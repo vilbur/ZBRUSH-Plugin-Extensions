@@ -1,0 +1,85 @@
+﻿[ISubPalette, "~Extended:Decimation Master"]
+
+
+/* decimateToPercent
+*/
+[RoutineDef, decimateToPercent
+,
+
+
+	/*
+
+
+	*/
+
+
+	//[VarSet, file_path, [FileNameResolvePath, [StrMerge, Subfolder, "\file"] ]]
+	//[VarSet, file_path, "C:\GoogleDrive\ProgramsData\CG\ZBrush\Plugins\INSTALLED\ToolLoader\ToolLoaderData\AHk\waitFoPreprocessAndExecuteDecimation.ahk"]
+	//[FileExecute, $ZFILE_UTILS_DLL, "LaunchAppWithFile",  #file_path]
+
+
+
+	/* SET DECIMATION % VALUE */
+	[ISet, "Zplugin:Decimation Master:% of decimation", [Var, $deciamte_percent] ]
+
+	/* PREROCESS */
+	//[IPress,Zplugin:Decimation Master:Pre-process Current]
+	//[IPress, "Zplugin:Decimation Master:Pre-process Current"]
+	//[IPress, "Zplugin:Decimation Master:Pre-process Current"]
+	[IPress, "Zplugin:Decimation Master:Pre-process Current"]
+
+
+	/* EXECUTE DECIMATE MASTER INTERUPTS THIS SCRIPT
+
+	 PREPROCESS CREATES TEMP FILE, IF CRETED THEN AUTOHOTKEY CAN RUN "DECIMATE CURRENT" by hotkey -- THIS DOES NOT WORK TOOO!!!!
+
+
+
+	   preprocess creates "{tool_name}.zpm" file in "c:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\"
+
+
+	*/
+
+	//[IPress, "Zplugin:Decimation Master:Decimate Current"   ]
+
+
+,
+	/* parameters */
+	$deciamte_percent
+]
+
+
+
+[IButton, "~Extended:Decimation Master:5", "Preprocess an decimate current tool. VALUE: 5%"
+,
+	[RoutineCall, decimateToPercent, 5 ]
+
+,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+
+[IButton, "~Extended:Decimation Master:20", "Preprocess an decimate current tool. VALUE: 20%"
+,
+	[RoutineCall, decimateToPercent, 20 ]
+
+,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+
+[IButton, "~Extended:Decimation Master:50", "Preprocess an decimate current tool. VALUE: 50%"
+,
+	[RoutineCall, decimateToPercent, 50 ]
+
+,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+
+
+[IButton, "~Extended:Decimation Master:Execute Decimate Current", "EXECUTE: Zplugin:Decimation Master:Decimate Current\n\nUsed by script decimateToPercent() "
+,
+
+	[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3D_Sphere3D_1.GoZ"][IPress,Tool:Import]
+
+
+	[IPress,Tool:Export]
+
+
+	//[IPress, "Zplugin:Decimation Master:Decimate Current"   ]
+	//[IPress,Zplugin:Decimation Master:Decimate Current   ]
+	[IClick, "Zplugin:Decimation Master:Decimate Current"   ]
+
+,	/*Disabled*/,	46,	CTRL+SHIFT+ALT+'D',	/*Icon*/,	32]

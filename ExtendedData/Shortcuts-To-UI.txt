@@ -1,0 +1,5 @@
+[ISubPalette, "~Extended:Shortcuts-To-UI"]
+
+
+[IButton, "~Extended:Shortcuts-To-UI:By Normals" ,	"Polygroups By Normals]"	,[IPress,Tool:Polygroups:Groups By Normals],,		,,,]
+[IButton, "~Extended:Shortcuts-To-UI:By UV" ,	"Auto Polygroups With UV]"	,[IPress,Tool:Polygroups:Auto Groups With UV],,		,,,]
