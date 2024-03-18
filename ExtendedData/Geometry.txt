@@ -1,7 +1,55 @@
 ﻿[ISubPalette, "~Extended:Geomtery"]
 
+/*------------------------------------------------------------------------------
 
-[IButton, "~Extended:Geomtery:ExtractMask","Copy Masked Geomrtry to new subtool"
+	FUNCTIONS
+
+--------------------------------------------------------------------------------*/
+
+/* extractSubtool
+*/
+[RoutineDef, extractSubtool
+,
+	/* function */
+	//[VarSet, $tool_name_origin, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, $tool_name_origin, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
+	[ISet,Tool:SubTool:Thick, [Var, $thickness] ]
+
+	//[IPress,Tool:SubTool:TBorder]
+
+	[IPress,Tool:SubTool:Extract]
+
+	[IPress,Tool:SubTool:Accept]
+
+	//[VarSet, $tool_name_extracted, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, $tool_name_extracted, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
+	/* RENAME SUBTOOL  */
+	[VarSet, $new_name, [StrMerge, $tool_name_origin, "-EX"] ]
+
+	[VarSet, $button_path,"Tool:SubTool:Rename"]
+	//set $button_path to the button you want
+	//"Tool:SubTool:Rename" - for SubTool
+	//"Tool:Layers:Rename" - for Layers
+	//"Preferences:Transpose Units:Set Units" - for Transpose Units
+	[If, (([IExists, $button_path]) && ([IsEnabled, $button_path])),
+	  [FileExecute, [Var, $ZFILE_UTILS_DLL], RenameSetNext, $new_name]
+	  [IPress, $button_path]
+	]
+
+	[Note, [StrMerge, "TOOL: ", $tool_name_origin, "\n\nEXTRACTED: ",  $new_name, "\n\nTHICKNESS:",  [Var, $thickness], "mm"  ]]
+
+,
+	/* parameters */
+	$thickness
+]
+
+/*------------------------------------------------------------------------------
+
+	BUTTONS
+
+--------------------------------------------------------------------------------*/
+
+[IButton, "~Extended:Geomtery:ExtractMask","Copy Masked Geomretry to new subtool"
 ,
 	[IPress,Tool:Visibility:HidePt]
 	[IPress,Tool:Masking:Clear]
@@ -21,8 +69,10 @@
 
 ]/*End of ZScript*/
 
-
-[IButton, "~Extended:Geomtery:Subdiv MinMax","Toggle subdivision level of all subtools between Min\Max level"
+/** Subdivision Min \ Max toggle
+  *
+  */
+[IButton, "~Extended:Geomtery:MinMax","Toggle subdivision level of all subtools between Min\Max level"
 ,
 	[VarSet, $current_subdiv, [IGet, Tool:Geometry:SDiv ]]
 
@@ -36,25 +86,46 @@
 		[IPress,Tool:SubTool:All Low]
 	]
 
-]/*End of ZScript*/
+,/*Disabled*/, 60,/*Hotkey*/,/*Icon*/,48]
 
-[IButton, "~Extended:Geomtery:Shell 0.02", "Automate shell extraction.\n\nSet SubTool:Thick:0.2\nSubTool:Extract\n\n:SubTool:Accept"
+
+/* EXTRACT geometry thickness 1.2mm
+*/
+[IButton, "~Extended:Geomtery:Extract", "Automate shell extraction.\n\n:Thick by current value of slider.\n\n\nSubTool:Extract\n\n:SubTool:Accept"
 ,
-
-	[VarSet, $source_tool, [IGetTitle,Tool:ItemInfo]]
-
-	[ISet,Tool:SubTool:Thick,0.02]
-
-	//[IPress,Tool:SubTool:TBorder]
-
-	[IPress,Tool:SubTool:Extract]
-
-	[IPress,Tool:SubTool:Accept]
+	[RoutineCall, extractSubtool, [IGet,Tool:SubTool:Thick] ]
 
 
-	[Note, [StrMerge, "TOOL: ", $source_tool, "\n\nEXTRACTED: ",  [IGetTitle,Tool:ItemInfo], "\n\nTHICKNESS: 0.02" ]  ]
+,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,48]
+
+
+/* EXTRACT geometry thickness 1.2mm
+*/
+[IButton, "~Extended:Geomtery: Extr 1.2", "Automate shell extraction.\n\nThick:-0.012\n\nShell: 1.2mm\nSubTool:Extract\n\n:SubTool:Accept"
+,
+	[RoutineCall, extractSubtool, -0.012 ]
+
+
+,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,48]
+
+
+/* EXTRACT geometry thickness 2mm
+*/
+[IButton, "~Extended:Geomtery: EXTR 2", "Automate shell extraction.\n\nThick:-0.02\n\nShell: 2mm\nSubTool:Extract\n\n:SubTool:Accept"
+,
+	[RoutineCall, extractSubtool, -0.02 ]
+,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,48]
 
 
 
 
-,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,32]
+
+
+
+
+
+
+
+
+
+

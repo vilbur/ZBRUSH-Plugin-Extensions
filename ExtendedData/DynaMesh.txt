@@ -24,20 +24,20 @@
 ,
 	[RoutineCall, dynameshTurnOn, 0, 128]
 
-,	/*Disabled*/,	92,	/*Hotkey*/,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	48 /* width*/ ,	/*Hotkey*/,	/*Icon*/,	48 /*Height*/]
 
 
 [IButton, "~Extended:DynaMesh:512", "Dynamesh:512 Blur:0"
 ,
 	[RoutineCall, dynameshTurnOn, 0, 512]
 
-,	/*Disabled*/,	92,	/*Hotkey*/,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	48 /* width*/ ,	/*Hotkey*/,	/*Icon*/,	48 /*Height*/]
 
 [IButton, "~Extended:DynaMesh:1024", "Dynamesh:1024 Blur:0"
 ,
 	[RoutineCall, dynameshTurnOn, 0, 1024]
 
-,	/*Disabled*/,	92,	/*Hotkey*/,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	48 /* width*/ ,	/*Hotkey*/,	/*Icon*/,	48 /*Height*/]
 
 
 [IButton, "~Extended:DynaMesh:2048", "Dynamesh:2048 Blur:0"
@@ -45,10 +45,10 @@
 	[RoutineCall, dynameshTurnOn, 0, 2048]
 
 
-,	/*Disabled*/,	92,	/*Hotkey*/,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	48 /* width*/ ,	/*Hotkey*/,	/*Icon*/,	48 /*Height*/]
 
 [IButton, "~Extended:DynaMesh:4096", "Dynamesh:4096 Blur:0"
 ,
 	[RoutineCall, dynameshTurnOn, 0, 4096]
 
-,	/*Disabled*/,	92,	/*Hotkey*/,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	48 /* width*/ ,	/*Hotkey*/,	/*Icon*/,	48 /*Height*/]

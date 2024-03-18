@@ -13,6 +13,7 @@
 [VarSet, $height_big,	32]
 [VarSet, $height_def,	32]
 
+[IButton, "~Extended:UI-Labels:________________________________ T O O L _________________________________",	"Open Tool Menu"	,[IShow,Tool][IClick, Tool:SubTool, 1],,		328,,,[Var, $height_big]] // left space for "Reset Tools Button "
 
 [IButton, "~Extended:UI-Labels:_____________________________ D O C U M E N T ____________________________",	"D O C U M E N T"	,,,		[Var, $width_full],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:________________________________ V I E W _________________________________",	"V I E W"	,,,		[Var, $width_full],,,[Var, $height_big]]
@@ -21,7 +22,6 @@
 [IButton, "~Extended:UI-Labels:______________________________ S C R I P T _______________________________",	"S C R I P T"	,,,		[Var, $width_full],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:______________________________ P L U G I N S _____________________________",	"Open ~Extended:UI-Labels Menu"	,[IShow,"~PluginManager"][IClick, "~PluginManager:Load Plugins", 1],,		[Var, $width_full],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:____________________________ C U S T O M - U I ___________________________",	"C U S T O M - U I"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:________________________________ T O O L _________________________________",	"Open Tool Menu"	,[IShow,Tool][IClick, Tool:SubTool, 1],,		350,,,[Var, $height_big]] // left space for "Reset Tools Button "
 [IButton, "~Extended:UI-Labels:_______________________________ B R U S H ________________________________",	"Open Brush Menu"	,[IShow,Brush],,		[Var, $width_full],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:______________________________ S T R O K E _______________________________",	"Open Stroke Menu"	,[IShow,Stroke],,		[Var, $width_full],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:_______________________________ A L P H A ________________________________",	"Open Alpha Menu"	,[IShow,Alpha],,		[Var, $width_full],,,[Var, $height_big]]
@@ -30,7 +30,7 @@
 [IButton, "~Extended:UI-Labels:____________________________ M A T E R I A L _____________________________",	""	,,,		[Var, $width_half],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:_______________________________ C O L O R ________________________________",	""	,,,		[Var, $width_half],,,[Var, $height_big]]
 //[IButton, "~Extended:UI-Labels:____________________________ G E O M E T R Y _____________________________",	""	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:__________ G E O M E T R Y __________",	"Open Tool:Geometry menu"	,[IShow,Tool]/*[IClick, Tool:Geometry, 1 ]*/,,		[Var, $width_half],,,[Var, $height_big]]
+[IButton, "~Extended:UI-Labels:__________ G E O M E T R Y __________",	"Open Tool:Geometry menu"	,[IShow,Tool][IClick, Tool]/*[IClick, Tool:Geometry, 1 ]*/,,		[Var, $width_half],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:__________ S U B T O O L S __________" ,	"Open Tool:SubTool menu"	,[IShow,Tool][IClick, Tool:SubTool,  1 ],,		[Var, $width_half],,,[Var, $height_big]]
 [IButton, "~Extended:UI-Labels:____________ L A Y E R S ____________" ,	"Open Tool:Layers menu"	,[IShow,Tool][IClick, Tool:Layers,   1 ],,		[Var, $width_half],,,[Var, $height_big]]
 

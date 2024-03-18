@@ -56,6 +56,13 @@
 
 ,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
 
+[IButton, "~Extended:Decimation Master:10", "Preprocess an decimate current tool. VALUE: 10%"
+,
+	[RoutineCall, decimateToPercent, 10 ]
+
+,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+
+
 [IButton, "~Extended:Decimation Master:20", "Preprocess an decimate current tool. VALUE: 20%"
 ,
 	[RoutineCall, decimateToPercent, 20 ]
@@ -72,14 +79,16 @@
 [IButton, "~Extended:Decimation Master:Execute Decimate Current", "EXECUTE: Zplugin:Decimation Master:Decimate Current\n\nUsed by script decimateToPercent() "
 ,
 
-	[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3D_Sphere3D_1.GoZ"][IPress,Tool:Import]
+	[Note, "PLACEHOLDER\n\nFUNCTION  doesn't work ",, 0]
+
+	//[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3D_Sphere3D_1.GoZ"][IPress,Tool:Import]
 
 
-	[IPress,Tool:Export]
+	//[IPress,Tool:Export]
 
 
 	//[IPress, "Zplugin:Decimation Master:Decimate Current"   ]
 	//[IPress,Zplugin:Decimation Master:Decimate Current   ]
-	[IClick, "Zplugin:Decimation Master:Decimate Current"   ]
+	//[IClick, "Zplugin:Decimation Master:Decimate Current"   ]
 
 ,	/*Disabled*/,	46,	CTRL+SHIFT+ALT+'D',	/*Icon*/,	32]

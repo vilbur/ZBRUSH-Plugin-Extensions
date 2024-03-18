@@ -26,6 +26,7 @@
 <zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
 <zscriptinsert, "ExtendedData/DynaMesh.txt">	// "./ExtendedData/DynaMesh.txt"
 <zscriptinsert, "ExtendedData/DecimationMaster.txt">	// "./ExtendedData/DecimationMaster.txt"
+<zscriptinsert, "ExtendedData/SubTool.txt">	// "./ExtendedData/SubTool.txt"
 <zscriptinsert, "ExtendedData/Layers.txt">	// "./ExtendedData/Layers.txt"
 <zscriptinsert, "ExtendedData/Scripts.txt">	// "./ExtendedData/Scripts.txt"
 <zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
