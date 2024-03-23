@@ -1,0 +1,53 @@
+﻿[ISubPalette, "~Extended:SubTool-Property"]
+
+
+[IButton,"~Extended:SubTool-Property:Set Boolean Add",,
+	[VarSet,subtoolPath,[StrMerge,"Tool:Subtool:",[IGetTitle,"Tool:Current Tool"]]]
+
+	[If,(1 & [IModGet,subtoolPath]) != 1,
+		[VarSet,wid,[IWidth,subtoolPath]]
+		[IClick,subtoolPath,wid-100,5] //Set Boolean Add
+	]
+,/*Disabled*/, 96 ,/*Hotkey*/,/*Icon*/, /* width */ ]
+
+
+
+[IButton,"~Extended:SubTool-Property:Set Boolean Subtract","",
+	[VarSet,subtoolPath,[StrMerge,"Tool:Subtool:",[IGetTitle,"Tool:Current Tool"]]]
+
+	[If,(2 & [IModGet,subtoolPath]) != 2,
+		[VarSet,wid,[IWidth,subtoolPath]]
+
+	[IClick,subtoolPath,wid-75,5]]
+,/*Disabled*/, 96 ,/*Hotkey*/,/*Icon*/, /* width */ ]
+
+
+[IButton,"~Extended:SubTool-Property:Set Boolean Intersection","",
+	[VarSet,subtoolPath,[StrMerge,"Tool:Subtool:",[IGetTitle,"Tool:Current Tool"]]]
+
+	[If,(4 & [IModGet,subtoolPath]) != 4,
+		[VarSet,wid,[IWidth,subtoolPath]]
+
+	[IClick,subtoolPath,wid-50,5]]
+,/*Disabled*/, 96 ,/*Hotkey*/,/*Icon*/, /* width */ ]
+
+
+[IButton,"~Extended:SubTool-Property:Set Visibility","",
+	[VarSet,subtoolPath,[StrMerge,"Tool:Subtool:",[IGetTitle,"Tool:Current Tool"]]]
+
+	[If,(16 & [IModGet,subtoolPath]) != 16,
+		[VarSet,wid,[IWidth,subtoolPath]]
+
+	[IClick,subtoolPath,wid-10,20]]
+,/*Disabled*/, 96 ,/*Hotkey*/,/*Icon*/, /* width */ ]
+
+
+
+[IButton,"~Extended:SubTool-Property:Set Colorize","",
+	[VarSet,subtoolPath,[StrMerge,"Tool:Subtool:",[IGetTitle,"Tool:Current Tool"]]]
+
+	[If,(8 & [IModGet,subtoolPath]) != 8,
+		[VarSet,wid,[IWidth,subtoolPath]]
+
+	[IClick,subtoolPath,wid-25,5]]
+,/*Disabled*/, 96 ,/*Hotkey*/,/*Icon*/, /* width */ ]

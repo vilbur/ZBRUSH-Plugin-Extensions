@@ -11,9 +11,9 @@
 [RoutineDef, extractSubtool
 ,
 	/* function */
-	//[VarSet, $tool_name_origin, [IGetTitle,Tool:ItemInfo]]
-	[VarSet, $tool_name_origin, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
-	[ISet,Tool:SubTool:Thick, [Var, $thickness] ]
+	//[VarSet, tool_name_origin, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, tool_name_origin, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
+	[ISet,Tool:SubTool:Thick, [Var, thickness] ]
 
 	//[IPress,Tool:SubTool:TBorder]
 
@@ -21,26 +21,23 @@
 
 	[IPress,Tool:SubTool:Accept]
 
-	//[VarSet, $tool_name_extracted, [IGetTitle,Tool:ItemInfo]]
-	[VarSet, $tool_name_extracted, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
-	/* RENAME SUBTOOL  */
-	[VarSet, $new_name, [StrMerge, $tool_name_origin, "-EX"] ]
+	//[VarSet, tool_name_extracted, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, tool_name_extracted, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
 
-	[VarSet, $button_path,"Tool:SubTool:Rename"]
-	//set $button_path to the button you want
-	//"Tool:SubTool:Rename" - for SubTool
-	//"Tool:Layers:Rename" - for Layers
-	//"Preferences:Transpose Units:Set Units" - for Transpose Units
-	[If, (([IExists, $button_path]) && ([IsEnabled, $button_path])),
-	  [FileExecute, [Var, $ZFILE_UTILS_DLL], RenameSetNext, $new_name]
-	  [IPress, $button_path]
+	/* RENAME SUBTOOL  */
+	[VarSet, subtoolName, [StrMerge, tool_name_origin, "-EX"] ]
+	[VarSet, renameButton,"Tool:SubTool:Rename"]
+
+	[If, (([IExists, renameButton]) && ([IsEnabled, renameButton])),
+	  [FileExecute, [Var, ZFILE_UTILS_DLL], RenameSetNext, subtoolName]
+	  [IPress, renameButton]
 	]
 
-	[Note, [StrMerge, "TOOL: ", $tool_name_origin, "\n\nEXTRACTED: ",  $new_name, "\n\nTHICKNESS:",  [Var, $thickness], "mm"  ]]
+	[Note, [StrMerge, "TOOL: ", tool_name_origin, "\n\nEXTRACTED: ",  subtoolName, "\n\nTHICKNESS:",  [Var, thickness], "mm"  ]]
 
 ,
 	/* parameters */
-	$thickness
+	thickness
 ]
 
 /*------------------------------------------------------------------------------
@@ -74,10 +71,10 @@
   */
 [IButton, "~Extended:Geomtery:MinMax","Toggle subdivision level of all subtools between Min\Max level"
 ,
-	[VarSet, $current_subdiv, [IGet, Tool:Geometry:SDiv ]]
+	[VarSet, current_subdiv, [IGet, Tool:Geometry:SDiv ]]
 
 
-	[If, [Var, $current_subdiv] == 1
+	[If, [Var, current_subdiv] == 1
 	, // THEN
 		[IPress,Tool:SubTool:All High]
 
@@ -115,17 +112,3 @@
 ,
 	[RoutineCall, extractSubtool, -0.02 ]
 ,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,48]
-
-
-
-
-
-
-
-
-
-
-
-
-
-

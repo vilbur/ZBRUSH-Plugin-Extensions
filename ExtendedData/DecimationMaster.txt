@@ -5,47 +5,22 @@
 */
 [RoutineDef, decimateToPercent
 ,
-
-
-	/*
-
-
-	*/
-
-
-	//[VarSet, file_path, [FileNameResolvePath, [StrMerge, Subfolder, "\file"] ]]
-	//[VarSet, file_path, "C:\GoogleDrive\ProgramsData\CG\ZBrush\Plugins\INSTALLED\ToolLoader\ToolLoaderData\AHk\waitFoPreprocessAndExecuteDecimation.ahk"]
-	//[FileExecute, $ZFILE_UTILS_DLL, "LaunchAppWithFile",  #file_path]
-
-
-
 	/* SET DECIMATION % VALUE */
-	[ISet, "Zplugin:Decimation Master:% of decimation", [Var, $deciamte_percent] ]
+	[ISet, "Zplugin:Decimation Master:% of decimation", [Var, deciamte_percent] ]
+
+	/* AHK LAUNCHED BELLOW WORKS ONLY IF SCRIPT IS CRUNNING FROM PLUGIN PALLETE, DOESN'T WORK IF LAUNCHED FROM SCRIPT PANE */
+	[VarSet, ahkPath,  [StrMerge, PLUGINDATAPATH, "\\Ahk\\PreprocessAndDecimateCurrent.ahk"]]
+
+	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #preprocessCurrent]
+	[FileExecute, ZFILE_UTILS_DLL, "LaunchAppWithFile",  #ahkPath]
+
 
 	/* PREROCESS */
-	//[IPress,Zplugin:Decimation Master:Pre-process Current]
 	//[IPress, "Zplugin:Decimation Master:Pre-process Current"]
-	//[IPress, "Zplugin:Decimation Master:Pre-process Current"]
-	[IPress, "Zplugin:Decimation Master:Pre-process Current"]
-
-
-	/* EXECUTE DECIMATE MASTER INTERUPTS THIS SCRIPT
-
-	 PREPROCESS CREATES TEMP FILE, IF CRETED THEN AUTOHOTKEY CAN RUN "DECIMATE CURRENT" by hotkey -- THIS DOES NOT WORK TOOO!!!!
-
-
-
-	   preprocess creates "{tool_name}.zpm" file in "c:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\"
-
-
-	*/
-
-	//[IPress, "Zplugin:Decimation Master:Decimate Current"   ]
-
 
 ,
 	/* parameters */
-	$deciamte_percent
+	deciamte_percent
 ]
 
 

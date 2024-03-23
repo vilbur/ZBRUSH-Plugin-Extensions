@@ -6,16 +6,16 @@
 [RoutineDef, dynameshTurnOn
 ,
 	/* function */
-	[VarSet, $output, $input_1]
-	[ISet,Tool:Geometry:Blur, [Var, $blur] ]
+	[VarSet, output, input_1]
+	[ISet,Tool:Geometry:Blur, [Var, blur] ]
 
-	[ISet,Tool:Geometry:Resolution, [Var, $resolution] ]
+	[ISet,Tool:Geometry:Resolution, [Var, resolution] ]
 
 	[IPress,Tool:Geometry:DynaMesh]
 
 ,
 	/* parameters */
-	$blur,	$resolution
+	blur,	resolution
 ]
 
 

@@ -6,37 +6,42 @@
 */
 
 
-[VarSet, $width_full,	382]
-[VarSet, $width_half,	192]
-[VarSet, $width_third,	128]
+[VarSet, fullLabel,	382]
+[VarSet, halfLabel,	192]
+[VarSet, thirdLabel,	128]
 
-[VarSet, $height_big,	32]
-[VarSet, $height_def,	32]
+[VarSet, heightLabel,	32]
 
-[IButton, "~Extended:UI-Labels:________________________________ T O O L _________________________________",	"Open Tool Menu"	,[IShow,Tool][IClick, Tool:SubTool, 1],,		328,,,[Var, $height_big]] // left space for "Reset Tools Button "
+[IButton, "~Extended:UI-Labels:________________________________ T O O L _________________________________",	"Open Tool Menu"	,[IShow,Tool][IClick, Tool:SubTool, 1],,		328,,,[Var, heightLabel]] // left space for "Reset Tools Button "
 
-[IButton, "~Extended:UI-Labels:_____________________________ D O C U M E N T ____________________________",	"D O C U M E N T"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:________________________________ V I E W _________________________________",	"V I E W"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:________________________________ E D I T _________________________________",	"E D I T"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:____________________________ T R A N S F O R M ___________________________",	"T R A N S F O R M"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:______________________________ S C R I P T _______________________________",	"S C R I P T"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:______________________________ P L U G I N S _____________________________",	"Open ~Extended:UI-Labels Menu"	,[IShow,"~PluginManager"][IClick, "~PluginManager:Load Plugins", 1],,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:____________________________ C U S T O M - U I ___________________________",	"C U S T O M - U I"	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:_______________________________ B R U S H ________________________________",	"Open Brush Menu"	,[IShow,Brush],,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:______________________________ S T R O K E _______________________________",	"Open Stroke Menu"	,[IShow,Stroke],,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:_______________________________ A L P H A ________________________________",	"Open Alpha Menu"	,[IShow,Alpha],,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:________________________________ M A S K _________________________________",	"Open Tool:Masking Menu"	,[IShow,Tool][IClick, Tool:Masking, 1],,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:_____________________________ T E X T U R E ______________________________",	""	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:____________________________ M A T E R I A L _____________________________",	""	,,,		[Var, $width_half],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:_______________________________ C O L O R ________________________________",	""	,,,		[Var, $width_half],,,[Var, $height_big]]
-//[IButton, "~Extended:UI-Labels:____________________________ G E O M E T R Y _____________________________",	""	,,,		[Var, $width_full],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:__________ G E O M E T R Y __________",	"Open Tool:Geometry menu"	,[IShow,Tool][IClick, Tool]/*[IClick, Tool:Geometry, 1 ]*/,,		[Var, $width_half],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:__________ S U B T O O L S __________" ,	"Open Tool:SubTool menu"	,[IShow,Tool][IClick, Tool:SubTool,  1 ],,		[Var, $width_half],,,[Var, $height_big]]
-[IButton, "~Extended:UI-Labels:____________ L A Y E R S ____________" ,	"Open Tool:Layers menu"	,[IShow,Tool][IClick, Tool:Layers,   1 ],,		[Var, $width_half],,,[Var, $height_big]]
+[IButton, "~Extended:UI-Labels:_____________________________ D O C U M E N T ____________________________",	"D O C U M E N T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:________________________________ V I E W _________________________________",	"V I E W"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:________________________________ E D I T _________________________________",	"E D I T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________________________ T R A N S F O R M ___________________________",	"T R A N S F O R M"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:______________________________ S C R I P T _______________________________",	"S C R I P T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:______________________________ P L U G I N S _____________________________",	"Open ~Extended:UI-Labels Menu"	,[IShow,"~PluginManager"][IClick, "~PluginManager:Load Plugins", 1],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________________________ C U S T O M - U I ___________________________",	"C U S T O M - U I"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_______________________________ B R U S H ________________________________",	"Open Brush Menu"	,[IShow,Brush],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:______________________________ S T R O K E _______________________________",	"Open Stroke Menu"	,[IShow,Stroke],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_______________________________ A L P H A ________________________________",	"Open Alpha Menu"	,[IShow,Alpha],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:________________________________ M A S K _________________________________",	"Open Tool:Masking Menu"	,[IShow,Tool][IClick, Tool:Masking, 1],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_____________________________ T E X T U R E ______________________________",	""	,,,		[Var, fullLabel],,,[Var, heightLabel]]
 
 
-[IButton, "~Extended:UI-Labels:____________ POLYGROUPS ____________" ,	"Open Tool:PolyGroups menu"	,[IShow,Tool][IClick, Tool:PolyGroups,   1 ],,		[Var, $width_half],,,[Var, $height_def]]
-[IButton, "~Extended:UI-Labels:____________ ZREMESHER ____________" ,	"Open Tool:Geometry:ZRemesher menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:ZRemesher,   1 ]*/,,		[Var, $width_half],,,[Var, $height_def]]
-[IButton, "~Extended:UI-Labels:____________ DYNAMESH ____________" ,	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,		[Var, $width_half],,,[Var, $height_def]]
-[IButton, "~Extended:UI-Labels:____________ DECIMATION __________" ,	"Open ZPlugin:Decimation Master menu"	,[IShow,Tool][IClick, ZPlugin:Decimation Master,   1 ],,		[Var, $width_half],,,[Var, $height_def]]
-[IButton, "~Extended:UI-Labels:____________ LIVEBOOLEAN __________" ,	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,		[Var, $width_half],,,[Var, $height_def]]
+[IButton, "~Extended:UI-Labels:__________ M A T E R I A L __________",	""	,,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_____________ C O L O R _____________",	""	,,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:__________ G E O M E T R Y __________",	"Open Tool:Geometry menu"	,[IShow,Tool][IClick, Tool]/*[IClick, Tool:Geometry, 1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:__________ S U B T O O L S __________",	"Open Tool:SubTool menu"	,[IShow,Tool][IClick, Tool:SubTool,  1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________ L A Y E R S ____________",	"Open Tool:Layers menu"	,[IShow,Tool][IClick, Tool:Layers,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+
+//[IButton, "~Extended:UI-Labels:_________ U V  M A S T E R __________",	"Open ZPlugin:UV Master menu"	,[IShow,ZPlugin]	[IClick, ZPlugin:UV Master, 1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+
+[IButton, "~Extended:UI-Labels:______ U V" ,	"Open Tool:UV Map menu"	,[IShow,Tool]	[IClick,Tool:UV Map, 1 ],,	(#halfLabel * 0.35) ,,,heightLabel]
+[IButton, "~Extended:UI-Labels:  M A S T E R __________",	"Open ZPlugin:UV Master menu"	,[IShow,ZPlugin]	[IClick, ZPlugin:UV Master, 1 ],,	(#halfLabel * 0.65) ,,,heightLabel]
+
+
+[IButton, "~Extended:UI-Labels:__________ POLYGROUPS ___________",	"Open Tool:PolyGroups menu"	,[IShow,Tool][IClick, Tool:PolyGroups,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:__________ ZREMESHER ____________",	"Open Tool:Geometry:ZRemesher menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:ZRemesher,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:___________ DYNAMESH ____________",	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:___________ DECIMATION __________",	"Open ZPlugin:Decimation Master menu"	,[IShow,ZPlugin][IClick, ZPlugin:Decimation Master,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:__________ LIVEBOOLEAN __________",	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]

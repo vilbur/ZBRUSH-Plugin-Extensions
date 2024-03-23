@@ -6,19 +6,19 @@
 	[IPress, "Zscript:Hide zscript"]
 , , 128, , , 96 ]
 
-[IButton, "~Extended:Script:RECORDED-SCRIPT", "Load ZScripts\RECORDED-SCRIPT.txt"
+[IButton, "~Extended:Script:RECORDED", "Load ZScripts\RECORDED-SCRIPT.txt"
 ,
 	[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\RECORDED-SCRIPT.txt"] ]]
 	[FileNameSetNext, "ZBRUSH_ZScripts\RECORDED-SCRIPT.txt"]
 	[IPress, ZScript:Load]
 
-, , 128, , , 96 ]
+, , 76, , , 96 ]
 
-[IButton, "~Extended:Script:          TEST", "Load ZScripts\TEST.txt"
+[IButton, "~Extended:Script:TEST", "Load ZScripts\TEST.txt"
 ,
 	//[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\TEST.txt"] ]]
 	[FileNameSetNext, "ZBRUSH_ZScripts\TEST.txt"]
 	[IPress, ZScript:Load]
 	//[IPress, Zscript:Hide zscript]
 
-, , 128, , , 96 ]
+, , 54, , , 96 ]

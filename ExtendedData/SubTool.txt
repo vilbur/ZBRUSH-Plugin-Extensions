@@ -6,40 +6,40 @@
 ,
 	//[RoutineCall, CheckSystem]
 
-	[VarSet, $button_path, "Tool:SubTool:Rename"]
-	//set $button_path to the button you want
+	[VarSet, button_path, "Tool:SubTool:Rename"]
+	//set button_path to the button you want
 	//"Tool:SubTool:Rename" - for SubTool
 	//"Tool:Layers:Rename" - for Layers
 	//"Preferences:Transpose Units:Set Units" - for Transpose Units
-	[If, (([IExists, $button_path]) && ([IsEnabled, $button_path])),
-	  [FileExecute, [Var, $ZFILE_UTILS_DLL], RenameSetNext, $new_name]
-	  [IPress, $button_path]
+	[If, (([IExists, button_path]) && ([IsEnabled, button_path])),
+	  [FileExecute, [Var, ZFILE_UTILS_DLL], RenameSetNext, new_name]
+	  [IPress, button_path]
 	]
 ,
 	/* parameters */
-	$new_name
+	new_name
 ]
 
-[VarDef, $name_suffixed, 0]
+[VarDef, name_suffixed, 0]
 
 /* appendSuffixToCurrentSubToolName
 */
 [RoutineDef, appendSuffixToCurrentSubToolName
 ,
 	/* function */
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
-	[If, [StrLength, $suffix ] > 0
+	[If, [StrLength, suffix ] > 0
 	, // THEN
-		[VarSet, $name_suffixed, [StrMerge, $subtool_name, "-", $suffix ] ]
+		[VarSet, name_suffixed, [StrMerge, subtool_name, "-", suffix ] ]
 
 	, // ELSE
-		[VarSet, $name_suffixed, $subtool_name]
+		[VarSet, name_suffixed, subtool_name]
 	]
 
 ,
 	/* parameters */
-	$suffix
+	suffix
 ]
 
 
@@ -99,14 +99,14 @@
 */
 [IButton, "~Extended:SubTool:Rename", "RENAME CURRENT SUBTOOL - floating dialog"
 ,
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
-	[VarSet, $new_name, [StrAsk, $subtool_name, "RENAME SUBTOOL"]]
+	[VarSet, new_name, [StrAsk, subtool_name, "RENAME SUBTOOL"]]
 
-	//[Note, $new_name]
-	[If, [StrLength, $subtool_name ] > 0
+	//[Note, new_name]
+	[If, [StrLength, subtool_name ] > 0
 	, // THEN
-		[RoutineCall, renameSubtool, $new_name ]
+		[RoutineCall, renameSubtool, new_name ]
 	]
 
 
@@ -119,16 +119,16 @@
 */
 [IButton, "~Extended:SubTool:Suffix", "ADD SUFFIX TO CURRENT SUBTOOL NAME - floating dialog"
 ,
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
-	[VarSet, $suffix, [StrAsk, "", "SUBTOOL SUFFIX"]]
+	[VarSet, suffix, [StrAsk, "", "SUBTOOL SUFFIX"]]
 
 
-	[If, [StrLength, $subtool_name ] > 0
+	[If, [StrLength, subtool_name ] > 0
 	, // THEN
-		[RoutineCall, appendSuffixToCurrentSubToolName, $suffix]
+		[RoutineCall, appendSuffixToCurrentSubToolName, suffix]
 
-		[RoutineCall, renameSubtool, $name_suffixed ]
+		[RoutineCall, renameSubtool, name_suffixed ]
 	]
 
 ,/*Disabled*/,60, /*Hotkey*/ ,/*Icon*/,24]
@@ -139,10 +139,10 @@
 [IButton, "~Extended:SubTool:DECI", "RENAME CURRENT SUBTOOL\n\nSUFFIX: 'DECI'"
 ,
 
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 
-	[RoutineCall, renameSubtool, [StrMerge, $subtool_name, "-DECI"] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-DECI"] ]
 
 ,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
 
@@ -153,10 +153,10 @@
 [IButton, "~Extended:SubTool:-5%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '5%'"
 ,
 
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 
-	[RoutineCall, renameSubtool, [StrMerge, $subtool_name, "-5%"] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-5%"] ]
 
 ,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
 
@@ -166,10 +166,10 @@
 [IButton, "~Extended:SubTool:-20%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '20%'"
 ,
 
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 
-	[RoutineCall, renameSubtool, [StrMerge, $subtool_name, "-20%"] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-20%"] ]
 
 ,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
 
@@ -179,9 +179,9 @@
 [IButton, "~Extended:SubTool:-50%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '50%'"
 ,
 
-	[VarSet, $subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 
-	[RoutineCall, renameSubtool, [StrMerge, $subtool_name, "-50%"] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-50%"] ]
 
 ,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
