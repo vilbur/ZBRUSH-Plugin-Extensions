@@ -1,0 +1,19 @@
+﻿[ISubPalette, "~Extended:Masking"]
+
+[IButton, "~Extended:Masking: G R O W", "Grow Mask",
+	[IPress,Tool:Masking:GrowMask]
+,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+
+
+[IButton, "~Extended:Masking:S H R I N K", "Shrink Mask",
+	[IPress,Tool:Masking:ShrinkMask]
+,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+
+
+[IButton, "~Extended:Masking:S H A R  P", "Sharpen Mask",
+	[IPress,Tool:Masking:SharpenMask]
+,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+
+[IButton, "~Extended:Masking: B L U R", "Blur Mask",
+	[IPress,Tool:Masking:BlurMask]
+,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]

@@ -6,13 +6,13 @@
 [RoutineDef, decimateToPercent
 ,
 	/* SET DECIMATION % VALUE */
-	[ISet, "Zplugin:Decimation Master:% of decimation", [Var, deciamte_percent] ]
+	[ISet, "Zplugin:Decimation Master:% of decimation", [Var, deciamtepercent] ]
 
 	/* AHK LAUNCHED BELLOW WORKS ONLY IF SCRIPT IS CRUNNING FROM PLUGIN PALLETE, DOESN'T WORK IF LAUNCHED FROM SCRIPT PANE */
 	[VarSet, ahkPath,  [StrMerge, PLUGINDATAPATH, "\\Ahk\\PreprocessAndDecimateCurrent.ahk"]]
 
 	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #preprocessCurrent]
-	[FileExecute, ZFILE_UTILS_DLL, "LaunchAppWithFile",  #ahkPath]
+	[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #ahkPath]
 
 
 	/* PREROCESS */
@@ -20,7 +20,7 @@
 
 ,
 	/* parameters */
-	deciamte_percent
+	deciamtepercent
 ]
 
 
@@ -56,7 +56,7 @@
 
 	[Note, "PLACEHOLDER\n\nFUNCTION  doesn't work ",, 0]
 
-	//[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3D_Sphere3D_1.GoZ"][IPress,Tool:Import]
+	//[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3DSphere3D1.GoZ"][IPress,Tool:Import]
 
 
 	//[IPress,Tool:Export]

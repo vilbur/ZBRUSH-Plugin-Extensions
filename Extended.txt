@@ -1,22 +1,22 @@
 ﻿/**
   *
   */
-[VarSet, PLUGIN_NAME, 	"Extended"]
-//[VarSet, PLUGIN_SUBMENU, 	"Run-Plugin"]
+[VarSet, PLUGINNAME, 	"Extended"]
+//[VarSet, PLUGINSUBMENU, 	"Run-Plugin"]
 
-[VarSet, PLUGIN_NENU,	[StrMerge, "~", PLUGIN_NAME ]]
+[VarSet, PLUGINNENU,	[StrMerge, "~", PLUGINNAME ]]
 
-[VarSet, PLUGIN_DATA_PATH,	[FileNameResolvePath, [StrMerge, PLUGIN_NAME, "Data" ]]]
-//[VarSet, PLUGIN_DATA_PATH,	[FileNameResolvePath, [StrMerge,  PLUGIN_NAME, "/", PLUGIN_NAME, "Data" ]]]N
-
-
-//[VarSet, CONTROLS_PATH,	"" ]	// DEV controls in script pane
-[VarSet, CONTROLS_PATH,	[StrMerge, PLUGIN_NENU, ":"]]	// MENU PATH: Menu > Control
-
-[VarSet, ZFILE_UTILS_DLL, [StrMerge, PLUGIN_DATA_PATH, "\\ZFileUtils64.dll"] ]
+[VarSet, PLUGINDATAPATH,	[FileNameResolvePath, [StrMerge, PLUGINNAME, "Data" ]]]
+//[VarSet, PLUGINDATAPATH,	[FileNameResolvePath, [StrMerge,  PLUGINNAME, "/", PLUGINNAME, "Data" ]]]N
 
 
-[IPalette, PLUGIN_NENU ]
+//[VarSet, CONTROLSPATH,	"" ]	// DEV controls in script pane
+[VarSet, CONTROLSPATH,	[StrMerge, PLUGINNENU, ":"]]	// MENU PATH: Menu > Control
+
+[VarSet, ZFILEUTILSDLL, [StrMerge, PLUGINDATAPATH, "\\ZFileUtils64.dll"] ]
+
+
+[IPalette, PLUGINNENU ]
 
 
 
@@ -24,6 +24,7 @@
 <zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"
 <zscriptinsert, "ExtendedData/Custom-UI.txt">	// "./ExtendedData/Custom-UI.txt"
 <zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
+<zscriptinsert, "ExtendedData/Masking.txt">	// "./ExtendedData/Masking.txt"
 <zscriptinsert, "ExtendedData/DynaMesh.txt">	// "./ExtendedData/DynaMesh.txt"
 <zscriptinsert, "ExtendedData/DecimationMaster.txt">	// "./ExtendedData/DecimationMaster.txt"
 <zscriptinsert, "ExtendedData/SubTool.txt">	// "./ExtendedData/SubTool.txt"

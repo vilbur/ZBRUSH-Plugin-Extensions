@@ -6,7 +6,7 @@
 [RoutineDef, dynameshTurnOn
 ,
 	/* function */
-	[VarSet, output, input_1]
+	[VarSet, output, input1]
 	[ISet,Tool:Geometry:Blur, [Var, blur] ]
 
 	[ISet,Tool:Geometry:Resolution, [Var, resolution] ]

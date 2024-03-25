@@ -6,35 +6,35 @@
 ,
 	//[RoutineCall, CheckSystem]
 
-	[VarSet, button_path, "Tool:SubTool:Rename"]
-	//set button_path to the button you want
+	[VarSet, buttonpath, "Tool:SubTool:Rename"]
+	//set buttonpath to the button you want
 	//"Tool:SubTool:Rename" - for SubTool
 	//"Tool:Layers:Rename" - for Layers
 	//"Preferences:Transpose Units:Set Units" - for Transpose Units
-	[If, (([IExists, button_path]) && ([IsEnabled, button_path])),
-	  [FileExecute, [Var, ZFILE_UTILS_DLL], RenameSetNext, new_name]
-	  [IPress, button_path]
+	[If, (([IExists, buttonpath]) && ([IsEnabled, buttonpath])),
+	  [FileExecute, [Var, ZFILEUTILSDLL], RenameSetNext, newname]
+	  [IPress, buttonpath]
 	]
 ,
 	/* parameters */
-	new_name
+	newname
 ]
 
-[VarDef, name_suffixed, 0]
+[VarDef, namesuffixed, 0]
 
 /* appendSuffixToCurrentSubToolName
 */
 [RoutineDef, appendSuffixToCurrentSubToolName
 ,
 	/* function */
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 	[If, [StrLength, suffix ] > 0
 	, // THEN
-		[VarSet, name_suffixed, [StrMerge, subtool_name, "-", suffix ] ]
+		[VarSet, namesuffixed, [StrMerge, subtoolname, "-", suffix ] ]
 
 	, // ELSE
-		[VarSet, name_suffixed, subtool_name]
+		[VarSet, namesuffixed, subtoolname]
 	]
 
 ,
@@ -99,18 +99,18 @@
 */
 [IButton, "~Extended:SubTool:Rename", "RENAME CURRENT SUBTOOL - floating dialog"
 ,
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
-	[VarSet, new_name, [StrAsk, subtool_name, "RENAME SUBTOOL"]]
+	[VarSet, newname, [StrAsk, subtoolname, "RENAME SUBTOOL"]]
 
-	//[Note, new_name]
-	[If, [StrLength, subtool_name ] > 0
+	//[Note, newname]
+	[If, [StrLength, subtoolname ] > 0
 	, // THEN
-		[RoutineCall, renameSubtool, new_name ]
+		[RoutineCall, renameSubtool, newname ]
 	]
 
 
-,/*Disabled*/,60, CTRL+SHIFT+ALT+'R' ,/*Icon*/,48]
+,/*Disabled*/,56, CTRL+SHIFT+ALT+'R' ,/*Icon*/,24]
 
 
 
@@ -119,69 +119,131 @@
 */
 [IButton, "~Extended:SubTool:Suffix", "ADD SUFFIX TO CURRENT SUBTOOL NAME - floating dialog"
 ,
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
 
 	[VarSet, suffix, [StrAsk, "", "SUBTOOL SUFFIX"]]
 
 
-	[If, [StrLength, subtool_name ] > 0
+	[If, [StrLength, subtoolname ] > 0
 	, // THEN
 		[RoutineCall, appendSuffixToCurrentSubToolName, suffix]
 
-		[RoutineCall, renameSubtool, name_suffixed ]
+		[RoutineCall, renameSubtool, namesuffixed ]
 	]
 
-,/*Disabled*/,60, /*Hotkey*/ ,/*Icon*/,24]
+,/*Disabled*/,48, /*Hotkey*/ ,/*Icon*/,24]
 
 
 /* ADD SUFFIX to current subtool
 */
 [IButton, "~Extended:SubTool:DECI", "RENAME CURRENT SUBTOOL\n\nSUFFIX: 'DECI'"
 ,
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtoolname, "-DECI"] ]
 
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+,/*Disabled*/,32,/*Hotkey*/,/*Icon*/,24]
+/* ADD SUFFIX to current subtool
+*/
+[IButton, "~Extended:SubTool:SUPPORT", "RENAME CURRENT SUBTOOL\n\nSUFFIX: 'SUPPORT'"
+,
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtoolname, "-SUPPORT"] ]
 
-
-	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-DECI"] ]
-
-,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
-
-
+,/*Disabled*/,32,/*Hotkey*/,/*Icon*/,24]
 
 /* ADD SUFFIX to current subtool
 */
 [IButton, "~Extended:SubTool:-5%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '5%'"
 ,
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtoolname, "-5%"] ]
 
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
-
-
-	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-5%"] ]
-
-,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
-
+,/*Disabled*/,32,/*Hotkey*/,/*Icon*/,24]
 
 /* ADD SUFFIX to current subtool
 */
 [IButton, "~Extended:SubTool:-20%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '20%'"
 ,
-
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
-
-
-	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-20%"] ]
-
-,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
-
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtoolname, "-20%"] ]
+,/*Disabled*/,32,/*Hotkey*/,/*Icon*/,24]
 
 /* ADD SUFFIX to current subtool
 */
 [IButton, "~Extended:SubTool:-50%", "RENAME CURRENT SUBTOOL\n\nSUFFIX: '50%'"
 ,
+	[VarSet, subtoolname, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+	[RoutineCall, renameSubtool, [StrMerge, subtoolname, "-50%"] ]
 
-	[VarSet, subtool_name, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ]
+,/*Disabled*/,32,/*Hotkey*/,/*Icon*/,24]
 
 
-	[RoutineCall, renameSubtool, [StrMerge, subtool_name, "-50%"] ]
+/* Copy Current Subtool Name
+*/
+[IButton, "~Extended:SubTool:Copy", "COPY NAME CURRENT SUBTOOL"
+,
 
-,/*Disabled*/,60,/*Hotkey*/,/*Icon*/,24]
+	[If, ! [MemGetSize, SUBTOOLNAME]
+	, // THEN memory exists
+
+	//	[VarDef, memoryString ]
+	//
+	//	[MemReadString, SUBTOOLNAME, memoryString, 0 /* offset */ ]
+	//
+	//	[Note, memoryString,, 0]
+	//
+	//	[MemDelete, SUBTOOLNAME]
+	//
+	//, // ELSE create memory block
+	//
+		[VarSet, subtoolNameCurrent, [FileNameExtract, [GetActiveToolPath], 2]]
+
+		[MemCreate, SUBTOOLNAME, 256 /* size */ ]
+
+		[MemWriteString, SUBTOOLNAME, subtoolNameCurrent /* value */ ]
+
+	]
+
+
+,/*Disabled*/,44,/*Hotkey*/,/*Icon*/, /*width*/]
+
+/* Paste Current Subtool Name
+*/
+[IButton, "~Extended:SubTool:Paste Name", "PASTE NAME CURRENT SUBTOOL"
+,
+
+	[If, [MemGetSize, SUBTOOLNAME]
+	, // THEN memory exists
+
+		[VarDef, memoryString, "" ]
+
+		[MemReadString, SUBTOOLNAME, memoryString, 0 /* offset */ ]
+
+		[RoutineCall, renameSubtool, memoryString ]
+
+	, // ELSE create memory block
+
+		[VarSet, toolNameCurrent, [FileNameExtract, [ToolGetPath], 2]]
+		[VarSet, subtoolNameCurrent, [FileNameExtract, [GetActiveToolPath], 2]]
+
+		[If, [MessageOKCancel, [StrMerge, "SUBTOOL WAS NOT COPIED RENAME ?                                  FROM: '", subtoolNameCurrent , "'						TO:   '\n", toolNameCurrent, "'" ] ]
+		, // THEN
+			[RoutineCall, renameSubtool, toolNameCurrent ]
+		]
+
+	]
+
+	/* OPEN RENAME DIALOG AFTER NAME PASTED */
+	[If, [IExists, "~Extended:SubTool:Rename"], // THEN
+		[IPress,"~Extended:SubTool:Rename"]
+	, // ELSE
+		[IPress,Tool:SubTool:Rename]]
+
+
+
+
+
+,/*Disabled*/,84 - ,/*Hotkey*/,/*Icon*/, /*width*/]
+
+
+/

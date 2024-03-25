@@ -40,8 +40,14 @@
 [IButton, "~Extended:UI-Labels:  M A S T E R __________",	"Open ZPlugin:UV Master menu"	,[IShow,ZPlugin]	[IClick, ZPlugin:UV Master, 1 ],,	(#halfLabel * 0.65) ,,,heightLabel]
 
 
+//[IButton, "~Extended:UI-Labels:__________ POLYGROUPS ___________",	"Open Tool:PolyGroups menu"	,[IShow,Tool][IClick, Tool:PolyGroups,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+//[IButton, "~Extended:UI-Labels:__________ ZREMESHER ____________",	"Open Tool:Geometry:ZRemesher menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:ZRemesher,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+//[IButton, "~Extended:UI-Labels:___________ DYNAMESH ____________",	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+//[IButton, "~Extended:UI-Labels:___________ DECIMATION __________",	"Open ZPlugin:Decimation Master menu"	,[IShow,ZPlugin][IClick, ZPlugin:Decimation Master,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+//[IButton, "~Extended:UI-Labels:__________ LIVEBOOLEAN __________",	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+
 [IButton, "~Extended:UI-Labels:__________ POLYGROUPS ___________",	"Open Tool:PolyGroups menu"	,[IShow,Tool][IClick, Tool:PolyGroups,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:__________ ZREMESHER ____________",	"Open Tool:Geometry:ZRemesher menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:ZRemesher,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:___________ DYNAMESH ____________",	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:___________ DECIMATION __________",	"Open ZPlugin:Decimation Master menu"	,[IShow,ZPlugin][IClick, ZPlugin:Decimation Master,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:__________ LIVEBOOLEAN __________",	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:______ Z R E M E S H E R ________",	"Open Tool:Geometry:ZRemesher menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:ZRemesher,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_______ D Y N A M E S H _________",	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:______ D E C I M A T I O N ______",	"Open ZPlugin:Decimation Master menu"	,[IShow,ZPlugin][IClick, ZPlugin:Decimation Master,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____ L I V E B O O L E A N ______",	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]

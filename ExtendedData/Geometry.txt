@@ -11,8 +11,8 @@
 [RoutineDef, extractSubtool
 ,
 	/* function */
-	//[VarSet, tool_name_origin, [IGetTitle,Tool:ItemInfo]]
-	[VarSet, tool_name_origin, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
+	//[VarSet, toolnameorigin, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, toolnameorigin, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
 	[ISet,Tool:SubTool:Thick, [Var, thickness] ]
 
 	//[IPress,Tool:SubTool:TBorder]
@@ -21,19 +21,19 @@
 
 	[IPress,Tool:SubTool:Accept]
 
-	//[VarSet, tool_name_extracted, [IGetTitle,Tool:ItemInfo]]
-	[VarSet, tool_name_extracted, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
+	//[VarSet, toolnameextracted, [IGetTitle,Tool:ItemInfo]]
+	[VarSet, toolnameextracted, [StrExtract,  [IGetTitle,Tool:ItemInfo], 0, [StrLength,  [IGetTitle,Tool:ItemInfo] ] - 2 ] ] // Remove trailing "." from name
 
 	/* RENAME SUBTOOL  */
-	[VarSet, subtoolName, [StrMerge, tool_name_origin, "-EX"] ]
+	[VarSet, subtoolName, [StrMerge, toolnameorigin, "-EX"] ]
 	[VarSet, renameButton,"Tool:SubTool:Rename"]
 
 	[If, (([IExists, renameButton]) && ([IsEnabled, renameButton])),
-	  [FileExecute, [Var, ZFILE_UTILS_DLL], RenameSetNext, subtoolName]
+	  [FileExecute, [Var, ZFILEUTILSDLL], RenameSetNext, subtoolName]
 	  [IPress, renameButton]
 	]
 
-	[Note, [StrMerge, "TOOL: ", tool_name_origin, "\n\nEXTRACTED: ",  subtoolName, "\n\nTHICKNESS:",  [Var, thickness], "mm"  ]]
+	[Note, [StrMerge, "TOOL: ", toolnameorigin, "\n\nEXTRACTED: ",  subtoolName, "\n\nTHICKNESS:",  [Var, thickness], "mm"  ]]
 
 ,
 	/* parameters */
@@ -71,10 +71,10 @@
   */
 [IButton, "~Extended:Geomtery:MinMax","Toggle subdivision level of all subtools between Min\Max level"
 ,
-	[VarSet, current_subdiv, [IGet, Tool:Geometry:SDiv ]]
+	[VarSet, currentsubdiv, [IGet, Tool:Geometry:SDiv ]]
 
 
-	[If, [Var, current_subdiv] == 1
+	[If, [Var, currentsubdiv] == 1
 	, // THEN
 		[IPress,Tool:SubTool:All High]
 

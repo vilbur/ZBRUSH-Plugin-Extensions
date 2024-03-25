@@ -64,23 +64,23 @@
   */
 [RoutineDef,TraysToggle
 ,
-	[VarSet, is_open_left, 	[IHPos,1000,1]>50 ] 
-	[VarSet, is_open_right, [IHPos,1001]+[IWidth,1001]<[IWidth,Title]]
+	[VarSet, isopenleft, 	[IHPos,1000,1]>50 ] 
+	[VarSet, isopenright, [IHPos,1001]+[IWidth,1001]<[IWidth,Title]]
 	
-	[If, [Var, is_open_left] ||  [Var, is_open_right] 
+	[If, [Var, isopenleft] ||  [Var, isopenright] 
 	, // HIDE TRAYS
-		[If, [Var, is_open_left],
+		[If, [Var, isopenleft],
 			[RoutineCall, LeftTrayHide]]
 	
-		[If, [Var, is_open_right],
+		[If, [Var, isopenright],
 			[RoutineCall, RightTrayHide]]
 		
 	, // SHOW TRAYS
 	
-		[If, [Var, is_open_left] == 0,
+		[If, [Var, isopenleft] == 0,
 			[RoutineCall, LeftTrayShow]]
 	
-		[If, [Var, is_open_right] == 0,
+		[If, [Var, isopenright] == 0,
 			[RoutineCall, RightTrayShow]]
 	
 	]
