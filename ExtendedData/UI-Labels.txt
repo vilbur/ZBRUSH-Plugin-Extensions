@@ -31,7 +31,6 @@
 [IButton, "~Extended:UI-Labels:__________ M A T E R I A L __________",	""	,,,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:_____________ C O L O R _____________",	""	,,,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:__________ G E O M E T R Y __________",	"Open Tool:Geometry menu"	,[IShow,Tool][IClick, Tool]/*[IClick, Tool:Geometry, 1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:__________ S U B T O O L S __________",	"Open Tool:SubTool menu"	,[IShow,Tool][IClick, Tool:SubTool,  1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:____________ L A Y E R S ____________",	"Open Tool:Layers menu"	,[IShow,Tool][IClick, Tool:Layers,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
 
 //[IButton, "~Extended:UI-Labels:_________ U V  M A S T E R __________",	"Open ZPlugin:UV Master menu"	,[IShow,ZPlugin]	[IClick, ZPlugin:UV Master, 1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
@@ -51,3 +50,42 @@
 [IButton, "~Extended:UI-Labels:_______ D Y N A M E S H _________",	"Open Tool:Geometry:DynaMesh menu"	,[IShow,Tool]/*[IClick, Tool:Geometry:DynaMesh,   1 ]*/,,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:______ D E C I M A T I O N ______",	"Open ZPlugin:Decimation Master menu"	,[IShow,ZPlugin][IClick, ZPlugin:Decimation Master,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:____ L I V E B O O L E A N ______",	"Open Render:Render Booleans menu"	,[IShow,Render][IClick, Tool:Render:Render Booleans,   1 ],,	[Var, halfLabel],,,[Var, heightLabel]]
+
+
+[IButton, "~Extended:UI-Labels:__________ S U B T O O L S __________",	"Open Tool:SubTool menu"	,
+
+
+	/* SET VISIBLE SUBTOOLS COUNT
+
+		Height is: count of subtools + folder count + 2 padding
+	*/
+ 	[If, [SubToolGetCount] > 10
+	, // THEN
+
+		[VarSet, activeInex, [SubToolGetActiveIndex]]
+
+		[SubToolSelect, [SubToolGetCount] - 1 ]
+
+		/* Folder count is getting by folder of last subtool */
+		[VarSet, lastFolderIndex, [SubToolGetFolderIndex]]
+
+		[If, lastFolderIndex == -1, // THEN
+			[VarSet, lastFolderIndex, 5]]
+
+		[SubToolSelect, activeInex ]
+
+		[ISet,Tool:SubTool:Visible Count, [SubToolGetCount] + lastFolderIndex + 2 ]
+
+		[ISet,Tool:SubTool:Subtool Scrollbar, 0,21 ]
+
+	, // ELSE
+		[ISet,Tool:SubTool:Visible Count, 10 ]
+	]
+
+	//[ISet,Tool:SubTool:Visible Count, [SubToolGetCount] + 10 ]
+	//[ISet,Tool:SubTool:Subtool Scrollbar, 0,21 ]
+
+	[IShow,Tool]
+	[IClick, Tool:SubTool,  1 ]
+
+ ,,	[Var, halfLabel],,,[Var, heightLabel]]
