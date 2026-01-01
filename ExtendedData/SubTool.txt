@@ -243,26 +243,53 @@
 
 
 
-,/*Disabled*/,84 - ,/*Hotkey*/,/*Icon*/, /*width*/]
+,/*Disabled*/,84,/*Hotkey*/,/*Icon*/, /*width*/]
 
 
-/* SHORTCUT
+/* MULTIPLE APPEND
 */
 [IButton, "~Extended:SubTool:Multi", "Multi Append",
 	[IPress, Zplugin:SubTool Master:MultiAppend ]
-,/*Disabled*/,84 - ,/*Hotkey*/,/*Icon*/, /*width*/]
+,/*Disabled*/,84,/*Hotkey*/,/*Icon*/, /*width*/]
 
 
-
-/* SHORTCUT
+/*------------------------------------------------------------------------------
+	SELECT SUBTOOL
+--------------------------------------------------------------------------------*/
+/* 
 */
-[IButton, "~Extended:SubTool:Sel First", "Select First",
+[IButton, "~Extended:SubTool:Sel First", "Select First Subtool",
 	[SubToolSelect, 0 ]
-,/*Disabled*/,84 - ,/*Hotkey*/,/*Icon*/, /*width*/]
-/* SHORTCUT
-*/
-[IButton, "~Extended:SubTool:Sel Last", "Select Last",
-	[SubToolSelect, [SubToolGetCount] - 1]
-,/*Disabled*/,84 - ,/*Hotkey*/,/*Icon*/, /*width*/]
+,/*Disabled*/,84,/*Hotkey*/,/*Icon*/, /*width*/]
 
+/* 
+*/
+[IButton, "~Extended:SubTool:Sel Last", "Select Last Subtool",
+	[SubToolSelect, [SubToolGetCount] - 1]
+,/*Disabled*/,84,/*Hotkey*/,/*Icon*/, /*width*/]
+
+/*------------------------------------------------------------------------------
+	HISTORY
+--------------------------------------------------------------------------------*/
+/* Nuke undo history script
+*/ 
+[IButton, "~Extended:SubTool:Delete undo", "Deletes UNDO history for ALL subtools.",
+
+	[IPress,Edit:Tool:DelUH]
+	
+,/*Disabled*/,100,/*Hotkey*/,/*Icon*/, /*width*/]
+
+
+/* Nuke undo history script
+*/ 
+[IButton, "~Extended:SubTool:Delete undo ALL", "Deletes UNDO history for ALL subtools.",
+
+	[Loop,[SubToolGetCount],
+		[SubToolSelect,n]
+		[If, [IsEnabled, "Edit:Tool:DelOlderUH"],[IPress,Edit:Tool:DelOlderUH]]
+		[If, [IsEnabled, "Edit:Tool:DelUH"],[IPress,Edit:Tool:DelUH]]
+	,n]
+	[Note, [StrMerge, [SubToolGetCount], " subtools have had UNDO history deleted."],,2]
+	
+,/*Disabled*/,100,/*Hotkey*/,/*Icon*/, /*width*/]
 

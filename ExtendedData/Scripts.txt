@@ -8,8 +8,8 @@
 
 [IButton, "~Extended:Script:RECORDED", "Load ZScripts\RECORDED-SCRIPT.txt"
 ,
-	[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\RECORDED-SCRIPT.txt"] ]]
-	[FileNameSetNext, "ZBRUSH_ZScripts\RECORDED-SCRIPT.txt"]
+	//[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\	"] ]]
+	[FileNameSetNext, RECREDSCRIPTPATH ]
 	[IPress, ZScript:Load]
 
 , , 76, , , 96 ]
@@ -22,3 +22,12 @@
 	//[IPress, Zscript:Hide zscript]
 
 , , 54, , , 96 ]
+
+[IButton, "~Extended:Script:OPEN", "OPEN ZScripts\RECORDED-SCRIPT.txt"
+,
+	//[ShellExecute, [StrMerge, "notepad++.exe \"" , [FileNameResolvePath, RECREDSCRIPTPATH], "\"" ] ]
+
+	
+	
+	
+, , 76, , , 96 ]

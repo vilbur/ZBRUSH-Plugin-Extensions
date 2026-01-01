@@ -14,7 +14,7 @@
 , , 96, , , 48 ]
 
 
-[IButton, "~Extended:Custom-UI:Save Hotkeys", "Save and store custom hotkeys to vilbur-custom-UI.cfg"
+[IButton, "~Extended:Custom-UI:Save Hotkeys", "Save and store custom hotkeys to vilbur-hotkeys.txt"
 ,
 	[FileNameSetNext, [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"]  ]
 
@@ -23,3 +23,18 @@
 	[Note, "HOTKEYS SAVED TO FILE",, 0.5]
 
 , , 96, , , 48 ]
+
+
+[IButton, "~Extended:Custom-UI:Open Hotkeys", "OPEN FILE vilbur-hotkeys.txt"
+,
+	[VarSet, hotkeysPath,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"] ]
+
+	[FileNameSetNext, hotkeysPath ]
+
+	[IPress,Preferences:Hotkeys:Save] // store keys
+
+	[Note, "HOTKEYS SAVED TO FILE",, 0.5]
+	
+	[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #hotkeysPath]
+
+, , 96, , , 24 ]

@@ -1,24 +1,33 @@
-﻿/**
-  *
-  */
+﻿
+/*------------------------------------------------------------------------------
+	EXTENSION NAME VARIABLES
+--------------------------------------------------------------------------------*/
 [VarSet, PLUGINNAME, 	"Extended"]
 //[VarSet, PLUGINSUBMENU, 	"Run-Plugin"]
 
-[VarSet, PLUGINNENU,	[StrMerge, "~", PLUGINNAME ]]
+[VarSet, PLUGINNENU,	[StrMerge, "~", PLUGINNAME ]] 
 
+/*------------------------------------------------------------------------------
+	DEFINE PATHS
+--------------------------------------------------------------------------------*/
 [VarSet, PLUGINDATAPATH,	[FileNameResolvePath, [StrMerge, PLUGINNAME, "Data" ]]]
 //[VarSet, PLUGINDATAPATH,	[FileNameResolvePath, [StrMerge,  PLUGINNAME, "/", PLUGINNAME, "Data" ]]]N
 
+[VarSet, AHKPATH, [StrMerge, PLUGINDATAPATH, "\\Ahk"] ]
 
 //[VarSet, CONTROLSPATH,	"" ]	// DEV controls in script pane
-[VarSet, CONTROLSPATH,	[StrMerge, PLUGINNENU, ":"]]	// MENU PATH: Menu > Control
 
 [VarSet, ZFILEUTILSDLL, [StrMerge, PLUGINDATAPATH, "\\ZFileUtils64.dll"] ]
 
 
+[VarSet, RECREDSCRIPTPATH,	[FileNameResolvePath,[StrMerge, ZBRUSH_ZScripts, "\\RECORDED-SCRIPT.txt"] ]]
+
+
+/* PATH TO CONTROLS */ 
+[VarSet, CONTROLSPATH,	[StrMerge, PLUGINNENU, ":"]]	// MENU PATH: Menu > Control
+
+
 [IPalette, PLUGINNENU ]
-
-
 
 
 <zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"

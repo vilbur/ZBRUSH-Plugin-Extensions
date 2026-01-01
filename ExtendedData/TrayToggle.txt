@@ -110,5 +110,5 @@
     
 [IButton, "~Extended:Trays:Trays Toggle", "Trays Toggle",
 	[RoutineCall, TraysToggle]
-,/*Disabled*/,/*Width*/,/*Hotkey*/,/*Icon*/,/*Height*/]
+,/*Disabled*/,  40 /*Width*/,/*Hotkey*/,/*Icon*/, 96 /*Height*/]
     
