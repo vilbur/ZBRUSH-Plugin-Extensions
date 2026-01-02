@@ -16,15 +16,17 @@
 
 [IButton, "~Extended:UI-Labels:_____________________________ D O C U M E N T ____________________________",	"D O C U M E N T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:________________________________ V I E W _________________________________",	"V I E W"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:________________________________ E D I T _________________________________",	"E D I T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_____________ E D I T _______________",	"E D I T"	,,,		[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:__________ M A T E R I A L __________",	""	,,,	[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:____________________________ T R A N S F O R M ___________________________",	"T R A N S F O R M"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:______________________________ S C R I P T _______________________________",	"S C R I P T"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:______________________________ P L U G I N S _____________________________",	"Open ~Extended:UI-Labels Menu"	,[IShow,"~PluginManager"][IClick, "~PluginManager:Load Plugins", 1],,		[Var, fullLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:____________________________ C U S T O M - U I ___________________________",	"C U S T O M - U I"	,,,		[Var, fullLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:_______________________________ B R U S H ________________________________",	"Open Brush Menu"	,[IShow,Brush],,		[Var, fullLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:______________________________ S T R O K E _______________________________",	"Open Stroke Menu"	,[IShow,Stroke],,		[Var, fullLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:_______________________________ A L P H A ________________________________",	"Open Alpha Menu"	,[IShow,Alpha],,		[Var, fullLabel],,,[Var, heightLabel]]
-[IButton, "~Extended:UI-Labels:________________________________ M A S K _________________________________",	"Open Tool:Masking Menu"	,[IShow,Tool][IClick, Tool:Masking, 1],,		[Var, fullLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________ B R U S H ______________",	"Open Brush Menu"	,[IShow,Brush],,		[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_____________ E D I T _______________",	"E D I T"	,,,		[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________ S T R O K E ____________",	"Open Stroke Menu"	,[IShow,Stroke],,		[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:_____________ A L P H A _____________",	"Open Alpha Menu"	,[IShow,Alpha],,		[Var, halfLabel],,,[Var, heightLabel]]
+[IButton, "~Extended:UI-Labels:____________ M A S K ________________",	"Open Tool:Masking Menu"	,[IShow,Tool][IClick, Tool:Masking, 1],,		[Var, halfLabel],,,[Var, heightLabel]]
 [IButton, "~Extended:UI-Labels:_____________________________ T E X T U R E ______________________________",	""	,,,		[Var, fullLabel],,,[Var, heightLabel]]
 
 

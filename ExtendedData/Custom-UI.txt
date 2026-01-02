@@ -28,13 +28,21 @@
 [IButton, "~Extended:Custom-UI:Open Hotkeys", "OPEN FILE vilbur-hotkeys.txt"
 ,
 	[VarSet, hotkeysPath,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"] ]
-
-	[FileNameSetNext, hotkeysPath ]
-
-	[IPress,Preferences:Hotkeys:Save] // store keys
-
-	[Note, "HOTKEYS SAVED TO FILE",, 0.5]
 	
-	[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #hotkeysPath]
+	[VarSet, hotkeysPath_default,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\StartupHotkeys.txt"] ]
 
+	//[FileNameSetNext, hotkeysPath ]
+
+	//[IPress,Preferences:Hotkeys:Save] // store keys
+
+	//[Note, "HOTKEYS SAVED TO FILE",, 0.5]
+	
+	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #hotkeysPath]
+
+	 //[FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\StartupHotkeys.txt" ]
+	
+	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath, [StrFromAsc,34] ] ]
+	
+	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath_default, [StrFromAsc,34] ] ]
+	
 , , 96, , , 24 ]

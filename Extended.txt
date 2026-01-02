@@ -20,7 +20,7 @@
 [VarSet, ZFILEUTILSDLL, [StrMerge, PLUGINDATAPATH, "\\ZFileUtils64.dll"] ]
 
 
-[VarSet, RECREDSCRIPTPATH,	[FileNameResolvePath,[StrMerge, ZBRUSH_ZScripts, "\\RECORDED-SCRIPT.txt"] ]]
+[VarSet, RECREDSCRIPTPATH,	[FileNameResolvePath, [StrMerge, ZBRUSH_ZScripts, "\\RECORDED-SCRIPT.txt"] ]]
 
 
 /* PATH TO CONTROLS */ 
@@ -30,6 +30,24 @@
 [IPalette, PLUGINNENU ]
 
 
+/*------------------------------------------------------------------------------
+	SIZES OF UI CONTROLS
+--------------------------------------------------------------------------------*/
+[VarSet, DEF,	24]
+[VarSet, MIN,	28]
+[VarSet, MID,	36]
+[VarSet, BIG,	48]
+
+[VarSet, W1,	32]
+[VarSet, W2,	48]
+[VarSet, W3,	64]
+[VarSet, W4,	96]
+[VarSet, W5,	192]
+[VarSet, FULL,	384]
+
+/*------------------------------------------------------------------------------
+	IMPORT SCRIPTS
+--------------------------------------------------------------------------------*/
 <zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"
 <zscriptinsert, "ExtendedData/Custom-UI.txt">	// "./ExtendedData/Custom-UI.txt"
 <zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
@@ -43,3 +61,4 @@
 <zscriptinsert, "ExtendedData/TrayToggle.txt">	// "./ExtendedData/TrayToggle.txt"
 <zscriptinsert, "ExtendedData/Shortcuts-To-UI.txt">	// "./ExtendedData/Shortcuts-To-UI.txt"
 <zscriptinsert, "ExtendedData/UI-Labels.txt">	// "./ExtendedData/UI-Labels.txt"
+<zscriptinsert, "ExtendedData/Polygroups.txt">	// "./ExtendedData/Polygroups.txt"

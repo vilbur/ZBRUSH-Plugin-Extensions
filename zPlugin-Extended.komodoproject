@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="39acb9c2-8a1e-4321-b725-24056bc641e7" kpf_version="5" name="zPlugin-Extended.komodoproject">
+<file id="0ef1a3ff-f754-440a-a306-9430ac80c90f" idref="39acb9c2-8a1e-4321-b725-24056bc641e7" name="Shortcuts-To-UI.txt" url="ExtendedData/Shortcuts-To-UI.txt">
+</file>
 <file id="99fb0e0f-c3dd-4058-a3c3-358107d96e21" idref="39acb9c2-8a1e-4321-b725-24056bc641e7" name="Test.txt" url="file:///C:/GoogleDrive/ProgramsData/CG/ZBrush/Config/ProgramFiles/ZScripts/Test.txt">
 </file>
 <file id="bd493cb6-f47d-4c4e-89b9-94da86656ed9" idref="39acb9c2-8a1e-4321-b725-24056bc641e7" name="Extended.txt" url="Extended.txt">

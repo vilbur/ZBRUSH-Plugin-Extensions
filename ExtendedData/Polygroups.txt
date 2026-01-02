@@ -1,0 +1,40 @@
+[ISubPalette, "~Extended:Polygroups"]
+
+
+[IButton, "~Extended:Polygroups: AUTO", "AUTO POLYGROUPS.\n\nShortcut for Tool:Polygroups:Auto groups"
+,
+		[IPress, "Tool:Polygroups:Auto groups"]
+
+, , #W2, , , #MID ]
+
+[IButton, "~Extended:Polygroups: ONE", "SINGLE POLYGROUP TO VISIBLE.\n\nShortcut for Tool:Polygroups:AutoVisible"
+,
+		[IPress, "Tool:Polygroups:AutoVisible"]
+
+, , #W2, , , #MID ]
+
+[IButton, "~Extended:Polygroups: MASK", "AUTO POLYGROUPS BY MASK.\n\nShortcut for Tool:Polygroups:Group Masked"
+,
+		[IPress, "Tool:Polygroups:Group Masked"]
+
+, , #W2, , , #MID ]
+
+[IButton, "~Extended:Polygroups: UV", "AUTO POLYGROUPS BY UV.\n\nShortcut for Tool:Polygroups:Auto Groups With UV"
+,
+		[IPress, "Tool:Polygroups:Auto Groups With UV"]
+
+, , #W2, , , #MID ]
+
+
+[IButton, "~Extended:Polygroups: NORMAL", "AUTO POLYGROUPS BY UV.\n\nShortcut for Tool:Polygroups:Auto Groups With UV"
+,
+		[IPress, "Tool:Polygroups:Auto Groups With UV"]
+
+, , #W3, , , #MID ]
+
+
+[ISlider, "~Extended:Polygroups:MaxAngle", 45/*CurValue*/, 1/*Resolution*/, 1/*MinValue*/, 90/*MaxValue*/, "MAX ANGLE FOR GROUP BY NORMAL.\n\nShortcut for Tool:Polygroups:MaxAngle",
+//Commands
+	//[Note, [IGet, "~Extended:Polygroups:MaxAngle"],, 0]
+	[ISet, "Tool:Polygroups:MaxAngle", [IGet, "~Extended:Polygroups:MaxAngle"] ]
+,	/*Disabled*/,	#W3 /*Width*/, #MIN	/*Height*/]

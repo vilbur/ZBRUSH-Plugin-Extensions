@@ -25,9 +25,6 @@
 
 [IButton, "~Extended:Script:OPEN", "OPEN ZScripts\RECORDED-SCRIPT.txt"
 ,
-	//[ShellExecute, [StrMerge, "notepad++.exe \"" , [FileNameResolvePath, RECREDSCRIPTPATH], "\"" ] ]
-
-	
-	
+	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], RECREDSCRIPTPATH, [StrFromAsc,34]]	]
 	
 , , 76, , , 96 ]

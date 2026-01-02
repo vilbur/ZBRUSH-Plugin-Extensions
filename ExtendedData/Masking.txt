@@ -48,10 +48,10 @@
 	[IPress, Tool:Visibility:ShowPt]
 ,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG  /*Height*/]
 
-[IButton, "~Extended:Masking: INVERT", "INVERSE MASK    Shortcut to Tool:Visibility:Inverse",
-	[IPress, Tool:Visibility:Inverse]
-,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID /*Height*/]
-
+//[IButton, "~Extended:Masking:INVERT", "INVERSE MASK    Shortcut to Tool:Visibility:Inverse",
+//	[IPress, Tool:Visibility:Inverse]
+//,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID /*Height*/]
+//
 
 
 [IButton, "~Extended:Masking:Mask Hidden", "Mask hidden mesh",
