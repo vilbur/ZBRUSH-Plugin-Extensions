@@ -55,6 +55,7 @@
 <zscriptinsert, "ExtendedData/DynaMesh.txt">	// "./ExtendedData/DynaMesh.txt"
 <zscriptinsert, "ExtendedData/DecimationMaster.txt">	// "./ExtendedData/DecimationMaster.txt"
 <zscriptinsert, "ExtendedData/SubTool.txt">	// "./ExtendedData/SubTool.txt"
+<zscriptinsert, "ExtendedData/Tool.txt">	// "./ExtendedData/Tool.txt"
 <zscriptinsert, "ExtendedData/SubTool-Property.txt">	// "./ExtendedData/SubTool-Property.txt"
 <zscriptinsert, "ExtendedData/Layers.txt">	// "./ExtendedData/Layers.txt"
 <zscriptinsert, "ExtendedData/Scripts.txt">	// "./ExtendedData/Scripts.txt"

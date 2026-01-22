@@ -13,45 +13,57 @@
 
 [ISubPalette, "~Extended:Masking"]
 
+[IButton, "~Extended:Masking: VIEW", "View Mask",
+	[IPress,Tool:Masking:ViewMask]
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG/*Height*/]
+
+
+[IButton, "~Extended:Masking: ALL", "Mask All",
+	[IPress,Tool:Masking:MaskAll]
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG/*Height*/]
+
+[IButton, "~Extended:Masking: CLEAR", "Clear Mask",
+	[IPress,Tool:Masking:Clear]
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG/*Height*/]
+
+[IButton, "~Extended:Masking: INV", "INVERSE MASK    Shortcut to Tool:Masking:Inverse",
+
+	[IPress,Tool:Masking:Inverse]
+	
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG /*Height*/]
+
+
 /*------------------------------------------------------------------------------
 	BLUR\SHARP MASK
 --------------------------------------------------------------------------------*/
 
-[IButton, "~Extended:Masking: G R O W", "Grow Mask",
+[IButton, "~Extended:Masking: GROW", "Grow Mask",
 	[IPress,Tool:Masking:GrowMask]
-,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 
 
-[IButton, "~Extended:Masking:S H R I N K", "Shrink Mask",
+[IButton, "~Extended:Masking: SHRINK", "Shrink Mask",
 	[IPress,Tool:Masking:ShrinkMask]
-,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 
 
-[IButton, "~Extended:Masking:S H A R  P", "Sharpen Mask",
+[IButton, "~Extended:Masking: SHARP", "Sharpen Mask",
 	[IPress,Tool:Masking:SharpenMask]
-,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 
-[IButton, "~Extended:Masking: B L U R", "Blur Mask",
+[IButton, "~Extended:Masking: BLUR", "Blur Mask",
 	[IPress,Tool:Masking:BlurMask]
-,	/*Disabled*/,	/*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	/*Height*/]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
+
+[IButton, "~Extended:Masking: BOOST", "Boost Mask",
+	[IPress,Tool:Masking:BoostMask]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
+
+[IButton, "~Extended:Masking: DILUTE", "Unboost Mask",
+	[IPress,Tool:Masking:DiluteMask]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 
 
-/*------------------------------------------------------------------------------
-	HIDE \ UNHIDE MESH BY MASK
---------------------------------------------------------------------------------*/
-
-[IButton, "~Extended:Masking: HIDE", "HIDE UNMASKED MESH             Shortcut to Tool:Visibility:HidePt",
-	[IPress, Tool:Visibility:HidePt]
-,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG  /*Height*/]
-
-[IButton, "~Extended:Masking: SHOW", "UNHIDE MESH             Shortcut to Tool:Visibility:ShowPt",
-	[IPress, Tool:Visibility:ShowPt]
-,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG  /*Height*/]
-
-//[IButton, "~Extended:Masking:INVERT", "INVERSE MASK    Shortcut to Tool:Visibility:Inverse",
-//	[IPress, Tool:Visibility:Inverse]
-//,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID /*Height*/]
-//
 
 
 [IButton, "~Extended:Masking:Mask Hidden", "Mask hidden mesh",
@@ -65,10 +77,52 @@
 	/* INVERT VISIBILITY */ 
 	[CanvasStroke,(ZObjStrokeV03n41%p1FB7D44p1DEF3AE0Pn-5AF1n1CA4n-ED94s1D199FE0s1D199FE0s1D199FE0z-38F=YH6VBDK3XH7VBEH8VBFH9VC0HAVC1HAVC2HBVC2HBVC3HCVC4HCVC5HEVC5HEVC6HFVC7H10VC7H11VC9H12VC9H12VCAH13VCAH14VCBH15VCBH16VCCH17VCCH17VCDH18VCDH19VCDH1AVCDH1BVCDH1CVCDH1DVCDH1EVCEH1FVCEH20VCEH20VCFH21VCFH22VCFH22VD0H22VD1H23VD1H23VD2H23VD3H23VD3)]
 	
+	/* RESTORE VIEW */ 
+	[IPress,Draw:Undo]
+
 	/* MASK ORIGINALLY HIDDEN MESH */ 
 	[IPress,Tool:Masking:MaskAll]
 	
 	/* SHO WHOLE MESH */ 
 	[IPress,Tool:Visibility:ShowPt]
+	
 
-,	/*Disabled*/,	#W4 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MIN /*Height*/]
+,	/*Disabled*/,	#W4 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID /*Height*/]
+
+
+[IButton, "~Extended:Masking:Group", "Mask polygroups borders",
+ 
+	[IPress,Tool:Masking:Clear]
+
+	[ISet, "Tool:Masking:Crease",	0 ]
+	[ISet, "Tool:Masking:Border",	0 ]
+	[ISet, "Tool:Masking:Groups",	1 ]
+ 
+	[IPress, "Tool:Masking:MaskByFeature" ]
+	
+	[IPress,Tool:Masking:GrowMask]
+	[IPress,Tool:Masking:GrowMask]
+	
+	[IPress,Tool:Masking:SharpenMask]
+	
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
+
+
+[IButton, "~Extended:Masking:Border", "Mask borders borders",
+ 
+	[IPress,Tool:Masking:Clear]
+
+	[ISet, "Tool:Masking:Crease",	0 ]
+	[ISet, "Tool:Masking:Border",	1 ]
+	[ISet, "Tool:Masking:Groups",	0 ]
+ 
+	[IPress, "Tool:Masking:MaskByFeature" ]
+	
+	[IPress,Tool:Masking:GrowMask]
+	[IPress,Tool:Masking:GrowMask]
+	
+	[IPress,Tool:Masking:SharpenMask]
+	
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
+
+

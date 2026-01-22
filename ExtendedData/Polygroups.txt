@@ -7,9 +7,9 @@
 
 , , #W2, , , #MID ]
 
-[IButton, "~Extended:Polygroups: ONE", "SINGLE POLYGROUP TO VISIBLE.\n\nShortcut for Tool:Polygroups:AutoVisible"
+[IButton, "~Extended:Polygroups: ONE", "SINGLE POLYGROUP TO VISIBLE.\n\nShortcut for Tool:Polygroups:GroupVisible"
 ,
-		[IPress, "Tool:Polygroups:AutoVisible"]
+		[IPress, "Tool:Polygroups:GroupVisible"]
 
 , , #W2, , , #MID ]
 
@@ -32,6 +32,18 @@
 
 , , #W3, , , #MID ]
 
+[IButton, "~Extended:Polygroups: FRONT", "AUTO POLYGROUPS BY UV.\n\nShortcut for Tool:Polygroups:Group Front"
+,
+		[IPress, "Tool:Polygroups:Group Front"]
+
+, , #W3, , , #MID ]
+
+
+[IButton, "~Extended:Polygroups: REGROUP", "AUTO POLYGROUPS BY UV.\n\nShortcut for Tool:Polygroups:ReGroupVisible"
+,
+		[IPress, "Tool:Polygroups:ReGroupVisible"]
+
+, , #W3, , , #MID ]
 
 [ISlider, "~Extended:Polygroups:MaxAngle", 45/*CurValue*/, 1/*Resolution*/, 1/*MinValue*/, 90/*MaxValue*/, "MAX ANGLE FOR GROUP BY NORMAL.\n\nShortcut for Tool:Polygroups:MaxAngle",
 //Commands

@@ -54,7 +54,7 @@
 [IButton, "~Extended:Decimation Master:Execute Decimate Current", "EXECUTE: Zplugin:Decimation Master:Decimate Current\n\nUsed by script decimateToPercent() "
 ,
 
-	[Note, "PLACEHOLDER\n\nFUNCTION  doesn't work ",, 0]
+	[Note, "~Extended:Decimation Master:PLACEHOLDER\n\nFUNCTION  doesn't work ",, 0]
 
 	//[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3DSphere3D1.GoZ"][IPress,Tool:Import]
 

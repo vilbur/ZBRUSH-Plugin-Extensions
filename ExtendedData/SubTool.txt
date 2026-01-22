@@ -226,7 +226,7 @@
 		[VarSet, toolNameCurrent, [FileNameExtract, [ToolGetPath], 2]]
 		[VarSet, subtoolNameCurrent, [FileNameExtract, [GetActiveToolPath], 2]]
 
-		[If, [MessageOKCancel, [StrMerge, "SUBTOOL WAS NOT COPIED RENAME ?                                  FROM: '", subtoolNameCurrent , "'						TO:   '\n", toolNameCurrent, "'" ] ]
+		[If, [MessageOKCancel, [StrMerge, "SUBTOOL WAS NOT COPIED RENAME ? FROM: '", subtoolNameCurrent , "'						TO:   '\n", toolNameCurrent, "'" ] ]
 		, // THEN
 			[RoutineCall, renameSubtool, toolNameCurrent ]
 		]
@@ -273,16 +273,16 @@
 --------------------------------------------------------------------------------*/
 /* Nuke undo history script
 */ 
-[IButton, "~Extended:SubTool:Delete undo", "Deletes UNDO history for ALL subtools.",
+[IButton, "~Extended:SubTool:Del UNDO", "Deletes UNDO history for ALL subtools.",
 
 	[IPress,Edit:Tool:DelUH]
 	
-,/*Disabled*/,100,/*Hotkey*/,/*Icon*/, /*width*/]
+,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey */,	/*Icon*/,	#BIG /*Height*/]
 
-
+	
 /* Nuke undo history script
 */ 
-[IButton, "~Extended:SubTool:Delete undo ALL", "Deletes UNDO history for ALL subtools.",
+[IButton, "~Extended:SubTool: ALL", "Deletes ALL UNDO history from ALL subtools.",
 
 	[Loop,[SubToolGetCount],
 		[SubToolSelect,n]
@@ -291,5 +291,7 @@
 	,n]
 	[Note, [StrMerge, [SubToolGetCount], " subtools have had UNDO history deleted."],,2]
 	
-,/*Disabled*/,100,/*Hotkey*/,/*Icon*/, /*width*/]
+,	/*Disabled*/,	#W1 /*Width*/,	/*Hotkey */,	/*Icon*/,	#BIG /*Height*/]
+
+
 

@@ -1,0 +1,32 @@
+﻿[ISubPalette, "~Extended:Tool"]
+
+/*------------------------------------------------------------------------------
+	HIDE \ UNHIDE MESH BY MASK
+--------------------------------------------------------------------------------*/
+
+[IButton, "~Extended:Tool: HIDE", "HIDE UNMASKED MESH             Shortcut to Tool:Visibility:HidePt",
+	[IPress, Tool:Visibility:HidePt]
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG  /*Height*/]
+
+[IButton, "~Extended:Tool: SHOW", "UNHIDE MESH             Shortcut to Tool:Visibility:ShowPt",
+	[IPress, Tool:Visibility:ShowPt]
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG  /*Height*/]
+
+/*------------------------------------------------------------------------------
+	MESH VISIBILITY
+--------------------------------------------------------------------------------*/
+
+[IButton, "~Extended:Tool: FLIP", "INVERT VISIBILITY    Flip VISIBLE \ HIDDEN GEOMETRY ",
+
+	
+	/* FRAME TO VIEW - minimize probelm on invert visibility with CanvasStroke*/ 
+	[IPress,Transform:Fit]
+	
+	
+	/* INVERT VISIBILITY */ 
+	[CanvasStroke,(ZObjStrokeV03n41%p1FB7D44p1DEF3AE0Pn-5AF1n1CA4n-ED94s1D199FE0s1D199FE0s1D199FE0z-38F=YH6VBDK3XH7VBEH8VBFH9VC0HAVC1HAVC2HBVC2HBVC3HCVC4HCVC5HEVC5HEVC6HFVC7H10VC7H11VC9H12VC9H12VCAH13VCAH14VCBH15VCBH16VCCH17VCCH17VCDH18VCDH19VCDH1AVCDH1BVCDH1CVCDH1DVCDH1EVCEH1FVCEH20VCEH20VCFH21VCFH22VCFH22VD0H22VD1H23VD1H23VD2H23VD3H23VD3)]
+	
+	/* RESTORE VIEW */ 
+	[IPress,Draw:Undo]
+
+,	/*Disabled*/,	#W2 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#BIG /*Height*/]

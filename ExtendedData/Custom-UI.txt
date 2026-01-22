@@ -11,7 +11,8 @@
 
 	[IUnPress,Preferences:Config:Enable Customize]
 
-, , 96, , , 48 ]
+, , #W4, , , #MID ]
+
 
 
 [IButton, "~Extended:Custom-UI:Save Hotkeys", "Save and store custom hotkeys to vilbur-hotkeys.txt"
@@ -22,27 +23,27 @@
 
 	[Note, "HOTKEYS SAVED TO FILE",, 0.5]
 
-, , 96, , , 48 ]
+, , #W4, , , #MIN ]
 
 
 [IButton, "~Extended:Custom-UI:Open Hotkeys", "OPEN FILE vilbur-hotkeys.txt"
 ,
-	[VarSet, hotkeysPath,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"] ]
+	[VarSet, hotkeysPath_vilbur,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\vilbur-hotkeys.txt"] ]
 	
-	[VarSet, hotkeysPath_default,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\StartupHotkeys.txt"] ]
+	[VarSet, hotkeysPath_startup,  [FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\StartupHotkeys.txt"] ]
 
-	//[FileNameSetNext, hotkeysPath ]
+	//[FileNameSetNext, hotkeysPath_vilbur ]
 
 	//[IPress,Preferences:Hotkeys:Save] // store keys
 
 	//[Note, "HOTKEYS SAVED TO FILE",, 0.5]
 	
-	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #hotkeysPath]
+	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #hotkeysPath_vilbur]
 
 	 //[FileNameResolvePath, "ZPUBLIC_ZStartup\\Hotkeys\StartupHotkeys.txt" ]
 	
-	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath, [StrFromAsc,34] ] ]
+	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath_vilbur, [StrFromAsc,34] ] ]
 	
-	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath_default, [StrFromAsc,34] ] ]
+	[ShellExecute, [StrMerge,"start notepad++.exe ", [StrFromAsc,34], #hotkeysPath_startup, [StrFromAsc,34] ] ]
 	
-, , 96, , , 24 ]
+, , #W4, , , #MID ]

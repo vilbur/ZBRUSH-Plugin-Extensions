@@ -11,6 +11,8 @@
 
 
 [IButton, "~Extended:Shortcuts-To-UI:[Scale Master]" , "Open:Tool:Scale Master",	[IShow,Zplugin] [IClick, Zplugin:Scale Master, 1 ],, 382 / 4	,,,]
+[IButton, "~Extended:Shortcuts-To-UI:[SubToolMaster]" , "Open:Tool:SubToolMaster",	[IShow,Zplugin] [IClick, Zplugin:SubToolMaster, 1 ],, 382 / 4	,,,]
 
+[IButton, "~Extended:Shortcuts-To-UI:[Transpose Master]" , "Open:Zplugin:Transpose Master",	[IShow,Zplugin] [IClick, Zplugin:Transpose Master, 1 ],, 382 / 4	,,,]
 
 [IButton, "~Extended:Shortcuts-To-UI:[ MeshToShell ]" , "Open:~MeshToShell:TESTING ",	[IShow,"~MeshToShell"] [IClick, "~MeshToShell:TEST", 1 ] [IClick, "~MeshToShell:Extract Shell", 1 ],, 382 / 4	,,,]
