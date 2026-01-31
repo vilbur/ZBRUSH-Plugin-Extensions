@@ -1,0 +1,104 @@
+/** setMainColor
+  */
+[RoutineDef, setMainColor
+,
+	//[Note, "setMainColor"]
+		[ISet, Color:MainColor:R, red]
+		[ISet, Color:MainColor:G, green]
+		[ISet, Color:MainColor:B, blue]
+, // PARAMS
+	red, green, blue
+]
+
+
+[ISubPalette, "~Extended:Color"]
+
+
+[IButton, "~Extended:Color: START", "Start paint mode.\n\nFill object with white\nENABLE brush RGB\n\nDISABLE Zadd"
+,
+	//[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\	"] ]]
+	[VarSet, curR, [IGet, Color:MainColor:R]]
+	[VarSet, curG, [IGet, Color:MainColor:G]]
+	[VarSet, curB, [IGet, Color:MainColor:B]]
+	//[VarSet, curR, [IGet, Color:Secondary Color:R]]
+	//[VarSet, curG, [IGet, Color:Secondary Color:G]]
+	//[VarSet, curB, [IGet, Color:Secondary Color:B]]
+	 
+	[RoutineCall, setMainColor, 255, 255, 255 ]
+
+	//[IPress, Color:SwitchColor ]
+	
+	[IPress, Color:FillObject ]
+
+	/* SET BRUSH */ 
+	[IPress, Draw:Rgb ]
+	[IUnPress, Draw:Zadd ]
+
+    /* RESET COLOR   */ 	
+	//[IPress, Color:SwitchColor ]
+
+	[RoutineCall, setMainColor, curR, curG, curB ]
+	
+	//[IPress, Color:SwitchColor ]
+
+, , #W2, , , #MIN ]
+
+
+
+[IButton, "~Extended:Color:R G B", "Cycle RED, GREEN & BLUE Main Color"
+,
+	
+	[VarSet, curR, [IGet, Color:MainColor:R]]
+	[VarSet, curG, [IGet, Color:MainColor:G]]
+	[VarSet, curB, [IGet, Color:MainColor:B]]
+	//
+	//[VarSet, curR, [IGet, Color:Secondary Color:R]]
+	//[VarSet, curG, [IGet, Color:Secondary Color:G]]
+	//[VarSet, curB, [IGet, Color:Secondary Color:B]]
+	//
+
+	[If, curR > 0,
+		// If Red, set to Green
+		[RoutineCall, setMainColor, 0, 255, 0]
+	,
+		[If, curG > 0,
+			// If Green, set to Blue
+			[RoutineCall, setMainColor, 0, 0, 255]
+		,
+			// Default: Set to Red (if Blue or any other color)
+			[RoutineCall, setMainColor, 255, 0, 0]
+		]
+	]
+	
+	//[IPress, Color:SwitchColor ]
+
+	
+, , #W2, , , #MIN ]
+
+[IButton, "~Extended:Color: B\W", "Cycle BLACK \ WHITE Main Color"
+,
+	//[ShellExecute, [StrMerge, "komodo.exe " , 	[FileNameResolvePath, "c:\GoogleDrive\ProgramsData\CG\ZBrush\Config\ProgramFiles\ZScripts\	"] ]]
+	[IPress, Color:SwitchColor ]
+
+
+	[VarSet, curR, [IGet, Color:MainColor:R]]
+	//[VarSet, curG, [IGet, Color:MainColor:G]]
+	//[VarSet, curB, [IGet, Color:MainColor:B]]
+	
+	//[VarSet, curR, [IGet, Color:Secondary Color:R]]
+	//[VarSet, curG, [IGet, Color:Secondary Color:G]]
+	//[VarSet, curB, [IGet, Color:Secondary Color:B]]
+	
+	//[Note, #curR	[RoutineCall, setMainColor, 255, 255, 255 ],, 0]
+	[If, curR > 0,
+		// If Red, set to Green
+		[RoutineCall, setMainColor, 0, 0, 0]
+	,
+		[RoutineCall, setMainColor, 255, 255, 255 ]
+
+	]
+	
+	//[IPress, Color:SwitchColor ]
+
+, , #W2, , , #MIN ]
+

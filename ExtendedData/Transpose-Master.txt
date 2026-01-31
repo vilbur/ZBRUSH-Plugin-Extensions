@@ -1,0 +1,107 @@
+﻿
+	
+[ISubPalette, "~Extended:Transpose Master"]
+
+
+///* decimateToPercent
+//*/
+//[RoutineDef, decimateToPercent
+//,
+//	/* SET DECIMATION % VALUE */
+//	[ISet, "Zplugin:Transpose Master:% of decimation", [Var, deciamtepercent] ]
+//
+//	/* AHK LAUNCHED BELLOW WORKS ONLY IF SCRIPT IS CRUNNING FROM PLUGIN PALLETE, DOESN'T WORK IF LAUNCHED FROM SCRIPT PANE */
+//	[VarSet, ahkPath,  [StrMerge, PLUGINDATAPATH, "\\Ahk\\PreprocessAndDecimateCurrent.ahk"]]
+//
+//	//[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #preprocessCurrent]
+//	[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #ahkPath]
+//
+//
+//	/* PREROCESS */
+//	//[IPress, "Zplugin:Transpose Master:Pre-process Current"]
+//
+//,
+//	/* parameters */
+//	deciamtepercent
+//]
+
+
+
+[IButton, "~Extended:Transpose Master:T Pose", "Set T Pose                        PRESS -> Zplugin:Transpose Master:TPoseMesh"
+,
+	[IPress, Zplugin:Transpose Master:TPoseMesh ]
+
+,	/*Disabled*/,	#W2,	/*Hotkey*/,	/*Icon*/,	#BIG]
+
+
+
+[IButton, "~Extended:Transpose Master:To Sub", "Transfer T pose to subools mesh                        PRESS -> Zplugin:Transpose Master:TPose|SubT"
+,
+	[IPress, "Zplugin:Transpose Master:TPose|SubT" ]
+
+,	/*Disabled*/,	#W2,	/*Hotkey*/,	/*Icon*/,	#BIG]
+
+
+
+
+[IButton, "~Extended:Transpose Master:Store", "Store TM Rig \n PRESS -> Zplugin:Transpose Master:StoreTM Rig"
+,
+	[IPress, Zplugin:Transpose Master:StoreTM Rig ]
+
+,	/*Disabled*/,	#W2,	/*Hotkey*/,	/*Icon*/,	#BIG]
+
+
+[IButton, "~Extended:Transpose Master:Paste", "Paste TM Rig                        PRESS -> Zplugin:Transpose Master:PasteTM Rig"
+,
+	[IPress, Zplugin:Transpose Master:PasteTM Rig ]
+
+,	/*Disabled*/,	#W2,	/*Hotkey*/,	/*Icon*/,	#MIN]
+
+
+[IButton, "~Extended:Transpose Master:Posed", "Paste Posed TM Rig                        PRESS -> Zplugin:Transpose Master:PasteTM Rig"
+,
+	[IPress, Tool:Rigging:Bind Mesh ]
+	[IPress, Tool:Adaptive Skin:Preview ]
+
+	[IPress, Zplugin:Transpose Master:PasteTM Rig ]
+	
+	[IUnPress, Tool:Adaptive Skin:Preview ]
+
+,	/*Disabled*/,	#W2,	/*Hotkey*/,	/*Icon*/,	#MIN]
+
+//[IButton, "~Extended:Transpose Master:10", "Preprocess an decimate current tool. VALUE: 10%"
+//,
+//	[RoutineCall, decimateToPercent, 10 ]
+//
+//,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+//
+//
+//[IButton, "~Extended:Transpose Master:20", "Preprocess an decimate current tool. VALUE: 20%"
+//,
+//	[RoutineCall, decimateToPercent, 20 ]
+//
+//,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+//
+//[IButton, "~Extended:Transpose Master:50", "Preprocess an decimate current tool. VALUE: 50%"
+//,
+//	[RoutineCall, decimateToPercent, 50 ]
+//
+//,	/*Disabled*/,	46,	/*Hotkey*/,	/*Icon*/,	32]
+//
+//
+//[IButton, "~Extended:Transpose Master:Execute Decimate Current", "EXECUTE: Zplugin:Transpose Master:Decimate Current\n\nUsed by script decimateToPercent() "
+//,
+//
+//	[Note, "~Extended:Transpose Master:PLACEHOLDER\n\nFUNCTION  doesn't work ",, 0]
+//
+//	//[FileNameSetNext,"C:\Users\Public\Documents\ZBrushData2022\ZPluginData\DecimationMasterData\PM3DSphere3D1.GoZ"][IPress,Tool:Import]
+//
+//
+//	//[IPress,Tool:Export]
+//
+//
+//	//[IPress, "Zplugin:Transpose Master:Decimate Current"   ]
+//	//[IPress,Zplugin:Transpose Master:Decimate Current   ]
+//	//[IClick, "Zplugin:Transpose Master:Decimate Current"   ]
+//
+//,	/*Disabled*/,	46,	CTRL+SHIFT+ALT+'D',	/*Icon*/,	32]

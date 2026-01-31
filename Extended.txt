@@ -30,6 +30,7 @@
 [IPalette, PLUGINNENU ]
 
 
+
 /*------------------------------------------------------------------------------
 	SIZES OF UI CONTROLS
 --------------------------------------------------------------------------------*/
@@ -51,6 +52,7 @@
 <zscriptinsert, "ExtendedData/Document.txt">	// "./ExtendedData/Document.txt"
 <zscriptinsert, "ExtendedData/Custom-UI.txt">	// "./ExtendedData/Custom-UI.txt"
 <zscriptinsert, "ExtendedData/Geometry.txt">	// "./ExtendedData/Geometry.txt"
+<zscriptinsert, "ExtendedData/Color.txt">	// "./ExtendedData/Color.txt"
 <zscriptinsert, "ExtendedData/Masking.txt">	// "./ExtendedData/Masking.txt"
 <zscriptinsert, "ExtendedData/DynaMesh.txt">	// "./ExtendedData/DynaMesh.txt"
 <zscriptinsert, "ExtendedData/DecimationMaster.txt">	// "./ExtendedData/DecimationMaster.txt"
@@ -63,3 +65,6 @@
 <zscriptinsert, "ExtendedData/Shortcuts-To-UI.txt">	// "./ExtendedData/Shortcuts-To-UI.txt"
 <zscriptinsert, "ExtendedData/UI-Labels.txt">	// "./ExtendedData/UI-Labels.txt"
 <zscriptinsert, "ExtendedData/Polygroups.txt">	// "./ExtendedData/Polygroups.txt"
+<zscriptinsert, "ExtendedData/zRemesher.txt">	// "./ExtendedData/zRemesher.txt"
+<zscriptinsert, "ExtendedData/Transpose-Master.txt">	// "./ExtendedData/Transpose-Master.txt"
+<zscriptinsert, "ExtendedData/zBrush.txt">	// "./ExtendedData/zBrush.txt"

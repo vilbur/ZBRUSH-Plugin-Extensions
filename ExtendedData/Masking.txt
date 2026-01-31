@@ -103,7 +103,7 @@
 	[IPress,Tool:Masking:GrowMask]
 	[IPress,Tool:Masking:GrowMask]
 	
-	[IPress,Tool:Masking:SharpenMask]
+	//[IPress,Tool:Masking:SharpenMask]
 	
 ,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 
@@ -121,7 +121,7 @@
 	[IPress,Tool:Masking:GrowMask]
 	[IPress,Tool:Masking:GrowMask]
 	
-	[IPress,Tool:Masking:SharpenMask]
+	//[IPress,Tool:Masking:SharpenMask]
 	
 ,	/*Disabled*/,	#W3 /*Width*/,	/*Hotkey CTRL+SHIFT+ALT+'Q' */,	/*Icon*/,	#MID/*Height*/]
 

@@ -1,0 +1,27 @@
+﻿[ISubPalette, "~Extended:zRemesher"]
+
+[IButton, "~Extended:zRemesher:LOW", "zRemeher preset for LOW Detail.\n\n Adaptive Size: 0",
+
+	[IPress,Tool:Geometry:KeepGroups]
+	
+	[IUnPress,Tool:Geometry:Adapt]
+	
+	[IPress,Tool:Geometry:Half]
+	
+	[ISet,Tool:Geometry:AdaptiveSize, 0 ]
+	
+
+,/*Disabled*/, #W2 ,/*Hotkey*/,/*Icon*/, #MIN ]
+
+[IButton, "~Extended:zRemesher:HIGH", "zRemeher preset for HIGH Detail.\n\n Adaptive Size: 60 - 100",
+
+	[IPress,Tool:Geometry:KeepGroups]
+	
+	[IPress,Tool:Geometry:Adapt]
+	
+	[IPress,Tool:Geometry:Double]
+	
+	[ISet,Tool:Geometry:AdaptiveSize, 100 ]
+	
+
+,/*Disabled*/, #W2 ,/*Hotkey*/,/*Icon*/, #MIN ]

@@ -1,0 +1,4 @@
+#SingleInstance force
+
+
+msgBox TEST

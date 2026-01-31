@@ -1,0 +1,11 @@
+[ISubPalette, "~Extended:zBrush"]
+
+
+[IButton, "~Extended:zBrush:CLEAN UP QuickSave", "CLEAN UP QuickSave Folder"
+,
+	[VarSet, filePath, [FileNameResolvePath, [StrMerge, AHKPATH, "\\cleanUpFolderQuickSave.ahk"] ]]
+
+	[FileExecute, ZFILEUTILSDLL, "LaunchAppWithFile",  #filePath]
+	
+, , 128, , , 24 ]
+
